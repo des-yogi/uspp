@@ -12,21 +12,27 @@
 
 
 
+html,
 body {
   // ТОЛЬКО типографика!
   font-family: $font-family;
-  font-size: $font-size;
+  font-size: 14px;
   line-height: $line-height;
   text-rendering: optimizeLegibility;
   color: $text-color;
+  text-decoration-skip-ink: auto;
+
+  @media (min-width: $screen-xl) {
+    font-size: 16px;
+  }
 }
 
-// .h1,
-// .h2,
-// .h3,
-// .h4,
-// .h5,
-// .h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
 h1,
 h2,
 h3,
@@ -36,22 +42,23 @@ h6 {
   font-family: $font-family;
   font-weight: 700;
   line-height: $line-height;
-  color: $title-color;
+  color: $text-color;
+  text-align: center;
 }
 
-// .h1,
-// .h2,
-// .h3,
+.h1,
+.h2,
 h1,
-h2,
-h3 {
-  margin-top: $line-height;
+h2 {
+  margin-top: 0;
   margin-bottom: ($line-height / 2);
 }
 
-// .h4,
-// .h5,
-// .h6,
+.h3,
+.h4,
+.h5,
+.h6,
+h3,
 h4,
 h5,
 h6 {
@@ -89,7 +96,7 @@ h6 {
   font-size: $font-size--h6;
 } */
 
-// .p,
+.p,
 p,
 ul,
 ol,
@@ -101,6 +108,7 @@ figure {
   margin-top: ($line-height / 2);
   margin-bottom: ($line-height / 2);
   color: currentColor;
+  hyphens: auto;
 }
 
 address {
@@ -138,7 +146,7 @@ small {
 
 sub,
 sup {
-  font-size: 70%;
+  font-size: 65%;
 }
 
 b,
@@ -154,4 +162,29 @@ blockquote {
   padding: 0;
   margin-left: 0;
   margin-right: 0;
+}
+
+a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  color: $second-color;
+  text-decoration-skip-ink: auto;
+  transition: all 0.3s ease-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    //color: new color;
+  }
+}
+
+a, b, i, strong, em, small, code {
+  line-height: inherit;
+}
+
+q {
+  quotes:  "«" "»";
 }

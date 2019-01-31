@@ -8,16 +8,12 @@
     "logo": [],
     "btn": [],
     "sprite-svg": [],
-    "sprite-png": [
-      "__demo"
-    ],
     "form": [],
-    "loader": [],
     "table": [],
-    "table-responsive": [],
     "table-mobile-scroll": [],
-    "owl-carousel": [],
     "burger": [],
+    "pagination": [],
+    "to-top": [],
     "modal": [],
     "close": [],
     "tabs": [],
@@ -26,23 +22,28 @@
     "embed-responsive": []
   },
   "addCssBefore": [
-    "../../node_modules/normalize.css/normalize.css",
     "./src/scss/variables.scss",
     "./src/scss/mixins.scss",
     "./src/scss/functions.scss",
-    "../../node_modules/owl.carousel/dist/assets/owl.carousel.css"
+    "../../node_modules/swiper/dist/css/swiper.css",
+    "../../node_modules/accordion-js/dist/accordion.css",
+    "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css"
   ],
   "addCssAfter": [
   ],
   "singleCompiled": [
+    "./node_modules/normalize.css/normalize.css"
   ],
   "addJsBefore": [
     "./node_modules/picturefill/dist/picturefill.min.js",
+    "./node_modules/ismobilejs/src/isMobile.js",
     "./node_modules/jquery/dist/jquery.min.js",
-    "./node_modules/jquery-migrate/dist/jquery-migrate.min.js",
+    "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js",
     "./node_modules/svg4everybody/dist/svg4everybody.js",
-    "./node_modules/owl.carousel/dist/owl.carousel.js",
-    "./node_modules/object-fit-images/dist/ofi.js"
+    "./node_modules/swiper/dist/js/swiper.js",
+    "./node_modules/blazy/blazy.js",
+    "./node_modules/object-fit-images/dist/ofi.js",
+    "./node_modules/accordion-js/dist/accordion.js"
   ],
   "addJsAfter": [
     "./src/js/global-script.js"

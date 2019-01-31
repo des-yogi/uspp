@@ -17,6 +17,32 @@
   display: none;
   overflow: hidden;
   outline: 0;
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 5px;
+    box-sizing: border-box;
+    user-select: none;
+    color: $white;
+    border-radius: $border-radius;
+    border: none;
+    background-color: $main-color;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover,
+    &:focus {
+      background-color: $main-dark-color;
+    }
+  }
 }
 
 .modal-dialog {
@@ -62,7 +88,7 @@
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
+  border-radius: $border-radius;
   outline: 0;
 }
 
@@ -85,32 +111,42 @@
 }
 
 .modal-header {
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem;
-  border-bottom: 1px solid #e9ecef;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
+  min-height: 42px;
+  //padding: 1rem;
+  // border-bottom: 1px solid #e9ecef;
+  // border-top-left-radius: 0.3rem;
+  // border-top-right-radius: 0.3rem;
 }
 
-.modal-header .close {
+/* .modal-header .close {
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
-}
+} */
 
-.modal-title {
+/* .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
-}
+} */
 
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 10px 15px 20px;
+
+  @media (min-width: 576px) {
+    padding: 15px 40px 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 15px 100px 40px;
+  }
 }
 
-.modal-footer {
+/* .modal-footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -124,7 +160,7 @@
 
 .modal-footer > :not(:last-child) {
   margin-right: .25rem;
-}
+} */
 
 .modal-scrollbar-measure {
   position: absolute;
@@ -136,7 +172,7 @@
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
+    max-width: 480px;
     margin: 1.75rem auto;
   }
   .modal-dialog-centered {
@@ -153,5 +189,11 @@
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 800px;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .modal-dialog {
+    max-width: 590px;
   }
 }

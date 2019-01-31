@@ -4,7 +4,6 @@
 const fs = require('fs');
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-//const gulpSequence = require('gulp-sequence');
 const browserSync = require('browser-sync').create();
 const realFavicon = require ('gulp-real-favicon');
 
@@ -440,17 +439,6 @@ gulp.task('img:opt', function (callback) {
   }
 });
 
-// Сборка всего
-/*gulp.task('build', function (callback) {
-  gulpSequence(
-    ['clean'],
-    ['sprite:svg', 'sprite:png', 'favicons'],
-    ['style', 'style:single', 'js', 'copy:css', 'copy:img', 'copy:js', 'copy:fonts'],
-    'html',
-    callback
-  );
-});*/
-
 // Сборка всего новая под gulp 4
 gulp.task('build', gulp.series(
   'clean',
@@ -477,7 +465,6 @@ gulp.task('deploy', function() {
 });
 
 // Задача по умолчанию
-// gulp.task('default', ['serve']); - старый таск
 
 // Локальный сервер, слежение
 gulp.task('serve', gulp.series('build', function() {
@@ -553,66 +540,6 @@ gulp.task('default',
   gulp.series('serve')
 );
 
-// gulp.task('serve', ['build'], function() {
-//   browserSync.init({
-//     server: dirs.buildPath,
-//     startPath: 'index.html',
-//     open: true,
-//     port: 8080,
-//   });
-//   // Слежение за стилями
-//   gulp.watch([
-//     dirs.srcPath + 'scss/style.scss',
-//     dirs.srcPath + dirs.blocksDirName + '/**/*.scss',
-//     projectConfig.addCssBefore,
-//     projectConfig.addCssAfter,
-//   ], ['style']);
-//   // Слежение за отдельными стилями
-//   gulp.watch(projectConfig.singleCompiled, ['style:single',]);
-//   // Слежение за добавочными стилями
-//   if(projectConfig.copiedCss.length) {
-//     gulp.watch(projectConfig.copiedCss, ['copy:css']);
-//   }
-//   // Слежение за изображениями
-//   if(lists.img.length) {
-//     gulp.watch(lists.img, ['watch:img']);
-//   }
-//   // Слежение за добавочными JS
-//   if(projectConfig.copiedJs.length) {
-//     gulp.watch(projectConfig.copiedJs, ['watch:copied:js']);
-//   }
-//   // Слежение за шрифтами
-//   gulp.watch('/fonts/*.{ttf,woff,woff2,eot,svg}', {cwd: dirs.srcPath}, ['watch:fonts']);
-//   // Слежение за html
-//   gulp.watch([
-//     '*.html',
-//     '_include/*.html',
-//     dirs.blocksDirName + '/**/*.html'
-//   ], {cwd: dirs.srcPath}, ['watch:html']);
-//   // Слежение за JS
-//   if(lists.js.length) {
-//     gulp.watch(lists.js, ['watch:js']);
-//   }
-//   // Слежение за SVG (спрайты)
-//   if((projectConfig.blocks['sprite-svg']) !== undefined) {
-//     gulp.watch('*.svg', {cwd: spriteSvgPath}, ['watch:sprite:svg']); // следит за новыми и удаляемыми файлами
-//   }
-//   // Слежение за PNG (спрайты)
-//   if((projectConfig.blocks['sprite-png']) !== undefined) {
-//     gulp.watch('*.png', {cwd: spritePngPath}, ['watch:sprite:png']); // следит за новыми и удаляемыми файлами
-//   }
-// });
-
-// Браузерсинк с 3-м галпом — такой браузерсинк...
-/*gulp.task('watch:img', ['copy:img'], reload);
-gulp.task('watch:copied:js', ['copy:js'], reload);
-gulp.task('watch:fonts', ['copy:fonts'], reload);
-gulp.task('watch:html', ['html'], reload);
-gulp.task('watch:js', ['js'], reload);
-gulp.task('watch:sprite:svg', ['sprite:svg'], reload);
-gulp.task('watch:sprite:png', ['sprite:png'], reload);*/
-
-
 
 /**
  * Вернет объект с обрабатываемыми файлами и папками
@@ -633,14 +560,6 @@ function getFilesList(config){
     var blockPath = config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/';
 
     if(fileExist(blockPath)) {
-
-      // Разметка (Pug)
-      /*if(fileExist(blockPath + blockName + '.pug')){
-        res.pug.push('../' + config.dirs.blocksDirName + '/' + blockName + '/' + blockName + '.pug');
-      }
-      else {
-        console.log('---------- Блок ' + blockName + ' указан как используемый, но не имеет pug-файла.');
-      }*/
 
       // Стили
       if(fileExist(blockPath + blockName + '.scss')){
@@ -695,61 +614,6 @@ function getFilesList(config){
   return res;
 }
 
-/*function getFilesList(config){
-
-  let res = {
-    'css': [],
-    'js': [],
-    'img': [],
-  };
-
-  // Style
-  for (let blockName in config.blocks) {
-    res.css.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/' + blockName + '.scss');
-    if(config.blocks[blockName].length) {
-      config.blocks[blockName].forEach(function(elementName) {
-        res.css.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/' + blockName + elementName + '.scss');
-      });
-    }
-  }
-  res.css = res.css.concat(config.addCssAfter);
-  res.css = config.addCssBefore.concat(res.css);
-
-  // JS
-  for (let blockName in config.blocks) {
-    res.js.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/' + blockName + '.js');
-    if(config.blocks[blockName].length) {
-      config.blocks[blockName].forEach(function(elementName) {
-        res.js.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/' + blockName + elementName + '.js');
-      });
-    }
-  }
-  res.js = res.js.concat(config.addJsAfter);
-  res.js = config.addJsBefore.concat(res.js);
-
-  // Images
-  for (let blockName in config.blocks) {
-    res.img.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/img/*.{jpg,jpeg,gif,png,svg}');
-  }
-  res.img = config.addImages.concat(res.img);
-
-  return res;
-}*/
-
-
-/**
- * Проверка существования файла или папки
- * @param  {string} path      Путь до файла или папки]
- * @return {boolean}
- */
-/*function fileExist(path) {
-  const fs = require('fs');
-  try {
-    fs.statSync(path);
-  } catch(err) {
-    return !(err && err.code === 'ENOENT');
-  }
-}*/
 function fileExist(filepath){
   let flag = true;
   try{

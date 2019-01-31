@@ -1,12 +1,12 @@
 {
-  "name": "project",
+  "name": "uspp",
   "version": "3.1.0",
-  "description": "The Markup and technical solutions for NAME site",
+  "description": "The Markup and technical solutions for USPP site",
   "author": "Igor Beliakovski",
   "license": "WTFPL",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/des-yogi/uspp"
   },
   "scripts": {
     "test:style": "stylelint \"src/**/*.scss\" --syntax=scss",
@@ -25,9 +25,7 @@
     "*.scss": "stylelint --syntax=scss"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "autoprefixer": "^9.3.1",
+    "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.3",
     "const": "^1.0.0",
     "cross-env": "^5.2.0",
@@ -45,9 +43,9 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-real-favicon": "^0.3.0",
+    "gulp-real-favicon": "^0.3.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
@@ -59,27 +57,29 @@
     "gulp-uglify": "^3.0.1",
     "gulp-wait": "0.0.2",
     "gulp.spritesmith": "^6.9.0",
-    "husky": "^1.2.0",
+    "husky": "^1.2.1",
     "imagemin-pngquant": "^6.0.0",
     "lint-staged": "^8.1.0",
     "merge-stream": "^1.0.1",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.11.0",
     "postcss-import": "^12.0.1",
     "postcss-inline-svg": "^3.1.1",
     "postcss-object-fit-images": "^1.1.2",
-    "stylelint": "^9.6.0",
+    "stylelint": "^9.9.0",
     "vinyl-buffer": "^1.0.1",
     "yaspeller": "^5.0.1"
   },
   "dependencies": {
-    "picturefill": "^3.0.3",
+    "@fancyapps/fancybox": "^3.5.6",
+    "accordion-js": "^2.6.3",
+    "blazy": "^1.8.2",
     "ismobilejs": "^0.5.1",
     "jquery": "^3.3.1",
-    "jquery-migrate": "^3.0.1",
-    "normalize.css": "^8.0.0",
+    "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
-    "owl.carousel": "^2.3.4",
-    "svg4everybody": "^2.1.9"
+    "picturefill": "^3.0.3",
+    "svg4everybody": "^2.1.9",
+    "swiper": "^4.4.6"
   }
 }
