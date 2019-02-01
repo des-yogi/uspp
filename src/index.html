@@ -17,8 +17,111 @@
       @@include('blocks/page-header/page-header.html')
 
       <main class="main" role="main">
+        <h1 class="visually-hidden">Головная сторінка сайту Українського союзу промисловців і підприємців</h1>
 
+        <section class="container  last-news-block">
+          <div class="row">
 
+            <div class="last-news-block__col-title">
+              <h2 class="last-news-block__title" style="text-align: left; border-bottom: 2px solid red;"><span style="display:inline-block;vertical-align: bottom;padding:7px 20px;background-color: red;">Останні новини</span></h2>
+            </div>
+
+            <div class="last-news-block__col-main">
+              <article class="main-news">
+                <a class="main-news__link" href="" title="Важливо">
+                  <picture>
+                    <source srcset="img/news_main.jpg" media="(min-width: 768px)">
+                    <!-- 590х442px для десктопа -->
+                    <img src="img/news_main.jpg" alt="News img" width="300" height="225">
+                  </picture>
+                  <div class="main-news__text">
+                    <h4 class="main-news__title">Популяризація української культури за кордоном допоможе привабити інвесторів – організатори проекту «Тріумф «Щедрика»</h4>
+                    <span class="main-news__date">14.04.2017</span>
+                  </div>
+                  <span class="main-news__label">Важливо</span>
+                </a>
+              </article>
+            </div>
+
+            <div class="last-news-block__col-news">
+              <article class="last-news-block__current">
+                <div class="last-news-block__img-wrapper">
+                  <!-- 183х137px только для десктопа -->
+                  <img src="" alt="News img" width="183" height="137">
+                </div>
+                <div class="last-news-block__text">
+                  <p>Європейська компанія пропонує допомогу бізнесу із виходом на ринки ЄС</p>
+                  <span class="publish-date">14.04.2017</span>
+                </div>
+              </article>
+
+              <article class="last-news-block__current">
+                <div class="last-news-block__img-wrapper">
+                  <!-- 183х137px только для десктопа -->
+                  <img src="" alt="News img" width="183" height="137">
+                </div>
+                <div class="last-news-block__text">
+                  <p>Європейська компанія пропонує допомогу бізнесу із виходом на ринки ЄС</p>
+                  <span class="publish-date">14.04.2017</span>
+                </div>
+              </article>
+
+              <article class="last-news-block__current">
+                <div class="last-news-block__img-wrapper">
+                  <!-- 183х137px только для десктопа -->
+                  <img src="" alt="News img" width="183" height="137">
+                </div>
+                <div class="last-news-block__text">
+                  <p>Європейська компанія пропонує допомогу бізнесу із виходом на ринки ЄС</p>
+                  <span class="publish-date">14.04.2017</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="last-news-block__col-news  last-news-block__col-news-btn">
+              <a class="btn  btn--news" href="">Всі новини</a>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="container  business-news-block">
+
+          <div class="business-news-block__current"></div>
+
+          <div class="business-news-block__tabs">
+            <div class="tabs">
+              <ul class="tabs__links" role="tablist">
+                <li class="tabs__link-wrap tabs__link-wrap--active" role="presentation">
+                  <a href="#demo-tab-01" class="tabs__link" data-toggle="tab" role="tab">Вкладка 01</a>
+                </li>
+                <li class="tabs__link-wrap" role="presentation">
+                  <span data-target="#demo-tab-02" class="tabs__link" data-toggle="tab" role="tab">Вкладка 02</span>
+                </li>
+                <li class="tabs__link-wrap" role="presentation">
+                  <a href="#demo-tab-03" class="tabs__link" data-toggle="tab" role="tab">Вкладка 03</a>
+                </li>
+                <li class="tabs__link-wrap" role="presentation">
+                  <a href="#demo-tab-04" class="tabs__link" data-toggle="tab" role="tab">Вкладка 04</a>
+                </li>
+              </ul>
+              <div class="tabs__content-wrapper">
+                <div class="tabs__content-item tabs__content-item--active" id="demo-tab-01" role="tabpanel">
+                  Оцінка останніх місяців щодо малого та середнього бізнесу
+                </div>
+                <div class="tabs__content-item" id="demo-tab-02" role="tabpanel">
+                  222
+                </div>
+                <div class="tabs__content-item" id="demo-tab-03" role="tabpanel">
+                  333
+                </div>
+                <div class="tabs__content-item" id="demo-tab-04" role="tabpanel">
+                  444
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </main>
 

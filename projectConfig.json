@@ -19,7 +19,8 @@
     "tabs": [],
     "object-fit-polyfill": [],
     "is-mobile": [],
-    "embed-responsive": []
+    "embed-responsive": [],
+    "lang-switcher": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
@@ -29,15 +30,14 @@
     "../../node_modules/accordion-js/dist/accordion.css",
     "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css"
   ],
-  "addCssAfter": [
-  ],
+  "addCssAfter": [],
   "singleCompiled": [
     "./node_modules/normalize.css/normalize.css"
   ],
   "addJsBefore": [
     "./node_modules/picturefill/dist/picturefill.min.js",
-    "./node_modules/ismobilejs/src/isMobile.js",
     "./node_modules/jquery/dist/jquery.min.js",
+    "./node_modules/ismobilejs/src/isMobile.js",
     "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js",
     "./node_modules/svg4everybody/dist/svg4everybody.js",
     "./node_modules/swiper/dist/js/swiper.js",
