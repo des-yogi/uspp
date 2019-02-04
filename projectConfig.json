@@ -20,7 +20,19 @@
     "object-fit-polyfill": [],
     "is-mobile": [],
     "embed-responsive": [],
-    "lang-switcher": []
+    "lang-switcher": [],
+    "last-news-block": [],
+    "main-news": [],
+    "business-news-block": [],
+    "publish-date": [],
+    "events-calendar": [],
+    "calendar": [],
+    "subscription-form": [],
+    "media": [],
+    "our-partners-block": [],
+    "contacts": [],
+    "socials": [],
+    "search": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

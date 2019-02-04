@@ -15,4 +15,22 @@
       width: 585px;
     }
   }
+
+  &--header {
+
+    img {
+      width: 49.4px;
+      height: 60px;
+
+      @media (min-width: $screen-md) {
+        width: 462px;
+        height: 60px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 585px;
+        height: 76px;
+      }
+    }
+  }
 }

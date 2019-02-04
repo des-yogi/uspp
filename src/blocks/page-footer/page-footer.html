@@ -1,11 +1,53 @@
 <!--DEV
-
-Нужно убрать пробел между @-ами:
-
 @ @include('blocks/page-footer/page-footer.html')
-
 -->
 
 <footer class="page-footer" role="contentinfo">
-  page-footer
+  <div class="row">
+    <div class="page-footer__about-col">
+      <a href="/" class="logo" title="УСПП logo">
+        <picture>
+          <source srcset="img/uspp-logo-full.svg" media="(min-width: 768px)">
+          <img src="img/uspp-logo.svg" alt="УСПП logo" width="62.6" height="76">
+        </picture>
+      </a>
+      <section class="contacts">
+        <h3 class="visually-hidden">Наши контакты</h3>
+        <div class="socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link" target="_blank" rel="nofollow noopener">Facebook</a>
+              <a class="socials__link" target="_blank" rel="nofollow noopener">Youtube</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <span>01001, м. Київ, вул. Хрещатик, 34</span>
+          </li>
+          <li class="contacts__item">
+            <span>Тел:</span>&nbsp;<a href="tel:+0442783069">044 278-30-69</a>,&nbsp;<a href="tel:+0442783069">044 278-30-69</a>
+          </li>
+          <li class="contacts__item">
+            <span>E-mail:</span>&nbsp;<a href="mailto:uspp@uspp.org.ua">uspp@uspp.org.ua</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="page-footer__links-col">
+      <a href="" class="page-footer__link-item" title="Ссылка" target="_blank" rel="nofollow noopener">
+        <div class="page-footer__img-wrapper">
+          <img src="img/kinah-tmb.jpg" alt="Img" width="82" height="82">
+        </div>
+        <h6>А. Кінах</h6>
+      </a>
+      <a href="" class="page-footer__link-item" title="Ссылка" target="_blank" rel="nofollow noopener">
+        <div class="page-footer__img-wrapper">
+          <img src="img/ooru-tmb.jpg" alt="Img" width="82" height="82">
+        </div>
+        <h6>ООРУ</h6>
+      </a>
+    </div>
+  </div>
 </footer>

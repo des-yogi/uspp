@@ -2,4 +2,38 @@
   background-color: $block-bg;
 
   $block-name:                &; // #{$block-name}__element
+
+  &__top {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: $shadow-menu;
+  }
+
+  &__lang {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    padding: 10px 0;
+    margin-left: 20px;
+    box-shadow: $shadow-menu;
+    //overflow-y: hidden;
+
+    /* &--open {
+      overflow-y: visible;
+      @media (min-width: $screen-xl) {
+        overflow: visible;
+      }
+    } */
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 0;
+  }
 }

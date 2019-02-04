@@ -3,10 +3,10 @@
 -->
 
 <header class="page-header" role="banner">
-  <div class="container">
-    <div class="page-header__top">
 
-      <a href="/" class="logo" aria-label="УСПП logo">
+    <div class="container  page-header__top">
+
+      <a href="/" class="logo  logo--header" title="УСПП logo">
         <picture>
           <source srcset="img/uspp-logo-full.svg" media="(min-width: 768px)">
           <img src="img/uspp-logo.svg" alt="УСПП logo" width="62.6" height="76">
@@ -18,7 +18,7 @@
         <form id="search-form" action="" method="get">
           <div class="search__field-wrapper">
             <input type="search" name="query" value="" placeholder="Поиск">
-            <button type="submit" aria-label="Кнопка Искать">
+            <button class="search__submit" type="submit" aria-label="Кнопка Искать по сайту">
               <svg width="24" height="24">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#search-icon"></use>
               </svg>
@@ -29,7 +29,7 @@
 
       <div class="page-header__lang">
         <ul class="lang-switcher">
-          <li class="lang-switcher__item">
+          <li class="lang-switcher__item  active">
             <a class="lang-switcher__link  active">Укр</a>
           </li>
           <li class="lang-switcher__item">
@@ -54,6 +54,7 @@
       </div>
 
     </div>
+
     <div class="page-header__bottom">
       <nav class="main-nav">
         <ul class="main-nav__menu">
@@ -166,15 +167,15 @@
           </li>
 
           <li class="main-nav__item  main-nav__item--wrapper">
-            <ul class="social">
-              <li class="social__item">
-                <a href="" class="social__link" target="_blank" rel="nofollow noopener">Facebook</a>
+            <ul class="socials">
+              <li class="socials__item">
+                <a href="" class="socials__link" target="_blank" rel="nofollow noopener">Facebook</a>
               </li>
-              <li class="social__item">
-                <a href="" class="social__link" target="_blank" rel="nofollow noopener">Youtube</a>
+              <li class="socials__item">
+                <a href="" class="socials__link" target="_blank" rel="nofollow noopener">Youtube</a>
               </li>
-              <li class="social__item">
-                <a href="" class="social__link" target="_blank" rel="nofollow noopener">ISO</a>
+              <li class="socials__item">
+                <a href="" class="socials__link" target="_blank" rel="nofollow noopener">ISO</a>
               </li>
             </ul>
             <a class="btn  btn--blue" href="">Членство в УСПП</a>
@@ -182,5 +183,5 @@
         </ul>
       </nav>
     </div>
-  </div>
+
 </header>
