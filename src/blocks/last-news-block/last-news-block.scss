@@ -1,9 +1,128 @@
-// В этом файле должны быть стили для БЭМ-блока last-news-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .last-news-block {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 60px;
+  }
 
   $block-name:                &; // #{$block-name}__element
+
+  &__col-title {
+    @include col(md, 12);
+  }
+
+  &__col-main {
+    @include col(xs, 12);
+    @include col(md, 6);
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-news {
+    @include col(xs, 12);
+    @include col(md, 6);
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-direction: column;
+      //justify-content: flex-start;
+    }
+  }
+
+  &__col-news-btn {
+    @include col(xs, 12);
+    @include col-offset(md, 6);
+    @include col(md, 6);
+
+    a {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: 10px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+
+  }
+
+  &__current-link {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: $white;
+    box-shadow: $shadow;
+    text-decoration: none;
+
+    &:last-child {
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      flex: 1 1;
+      display: flex;
+      padding: 0;
+    }
+  }
+
+  &__img-wrapper {
+    display: none;
+    overflow: hidden;
+
+    img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      //width: 140px;
+      width: 33%;
+      //min-height: 105px;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 183px;
+      height: 137px;
+      margin-right: 20px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+
+    h5 {
+      margin: 0;
+      color: inherit;
+    }
+
+    span {
+      margin-top: auto;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex: 1 1;
+      display: flex;
+      flex-direction: column;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 20px;
+    }
+  }
 
 }

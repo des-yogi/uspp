@@ -19,17 +19,9 @@
     position: relative;
     width: 80px;
     height: 40px;
-    padding: 10px 0;
+    //padding: 10px 0;
     margin-left: 20px;
     box-shadow: $shadow-menu;
-    //overflow-y: hidden;
-
-    /* &--open {
-      overflow-y: visible;
-      @media (min-width: $screen-xl) {
-        overflow: visible;
-      }
-    } */
   }
 
   &__bottom {

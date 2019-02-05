@@ -1,5 +1,5 @@
 (function () {
-  var isMobile = window.isMobile.any;
+  const isMobile = window.isMobile.any;
 
   if (isMobile) {
     console.log('This - mobile');
@@ -7,27 +7,32 @@
     var langSwitcher = document.querySelector('.lang-switcher');
     if (langSwitcher) {
       var langsArr = langSwitcher.querySelectorAll('.lang-switcher__item');
-      var langLinks = langSwitcher.querySelectorAll('.lang-switcher__link');
       var currentLang = langSwitcher.querySelector('.active');
     }
 
-    var makeActive = function () {
-      langLinks.forEach(function (link) {
-        if (link.classList.contains('active')) {
-          link.removeAttribute('href');
-          link.parentElement.classList.add('active');
-        }
-      });
-    };
-
-    makeActive();
-
     var langSwitchOpener = function (e) {
-      // e.preventDefault();
+      //e.preventDefault();
+      var target = e.target;
+
       for (var i = 0; i < langsArr.length; i++) {
-        langsArr[i].classList.toggle('open');
+        if ( !langsArr[i].classList.contains('open') && !langsArr[i].classList.contains('active') ) {
+          langsArr[i].classList.add('open');
+          this.classList.add('rotate-bg');
+        } else if (langsArr[i].classList.contains('open') && !langsArr[i].classList.contains('active')) {
+            langsArr[i].classList.remove('open');
+            this.classList.remove('rotate-bg');
+        }
       }
-      // console.log('Click');
+
+      for (var j = 0; j < langsArr.length; j++) {
+        if (langsArr[j].classList.contains('active')) {
+          langsArr[j].classList.remove('active');
+          langsArr[j].children[0].classList.remove('active');
+          langsArr[j].children[0].removeAttribute('href');
+        }
+        target.parentElement.classList.add('active');
+        target.classList.add('active');
+      }
     };
 
     if (currentLang) {
@@ -35,43 +40,3 @@
     }
   }
 })();
-
-/*(function(){
-  var langWrapper = document.querySelector('.page-header__lang');
-  var langLinks = langWrapper.querySelectorAll('.lang-switcher__link');
-  var isMobile = window.isMobile.any;
-
-  var makeActive = function () {
-    langLinks.forEach(function (link) {
-        if (link.classList.contains('active')) {
-          link.removeAttribute('href');
-          link.parentElement.classList.add('active');
-        }
-    });
-  };
-
-  makeActive();
-
-  if(langWrapper && isMobile) {
-
-    langWrapper.addEventListener('click', function(event) {
-      // event.currentTarget.stopPropagation();
-      // event.stopPropagation();
-      // event.preventDefault();
-      langWrapper.classList.toggle('main-nav__lang-wrapper--open');
-    }, true)
-  } else if (langWrapper && !isMobile) {
-      langWrapper.addEventListener('mouseover', function() {
-        if (!langWrapper.classList.contains('main-nav__lang-wrapper--open')) {
-          langWrapper.classList.add('main-nav__lang-wrapper--open');
-        } else return;
-      })
-
-      langWrapper.addEventListener('mouseout', function() {
-        if (langWrapper.classList.contains('main-nav__lang-wrapper--open')) {
-          langWrapper.classList.remove('main-nav__lang-wrapper--open');
-        } else return;
-      })
-  }
-
-}());*/

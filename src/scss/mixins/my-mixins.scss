@@ -34,3 +34,15 @@
    image-rendering: -moz-crisp-edges; /* Firefox */
    -ms-interpolation-mode: nearest-neighbor; /* IE */
 }
+
+@mixin img-width-flex {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin img-hight-flex {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

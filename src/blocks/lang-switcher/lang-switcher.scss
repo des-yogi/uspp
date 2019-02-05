@@ -6,23 +6,19 @@
   padding-left: 0;
   list-style-type: none;
   background-color: $white;
+  background-image: svg-load('../img/arrow-down.svg', fill=$text-muted);
+  background-position: right 8px top 15px;
+  background-repeat: no-repeat;
+  background-size: 20px 9px;
 
-  //overflow-y: hidden;
+  &:hover,
+  &:focus {
+    background-image: svg-load('../img/arrow-down.svg', fill=$main-color);
+  }
 
-  /* &::after {
-    position: absolute;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    content: "";
-    display: block;
-    width: 20px;
-    height: 9px;
-    background-image: svg-load('../img/arrow-up.svg', fill=$text-muted);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  } */
+  &.rotate-bg {
+    background-image: svg-load('../img/arrow-up.svg', fill=$main-color);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
@@ -30,7 +26,6 @@
     // margin-right: 25px;
     opacity: 0;
     height: 0;
-    // padding: 0 10px;
     cursor: pointer;
     transition: $transition;
     order: 0;
@@ -45,39 +40,22 @@
       opacity: 1;
     }
 
-    &.open {
-      margin-top: 20px;
-    }
-
     &.active {
       order: -1;
-      margin-top: 0;
     }
   }
 
   &__link {
     display: block;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     font-weight: 500;
     font-size: 18px;
     text-transform: uppercase;
     text-decoration: none;
     color: currentColor;
 
-
     &.active {
       color: $main-color;
     }
-
-    &.open {
-
-    }
-
-
   }
 }
-
-/* .lang-switcher__item .active {
-  order: -1;
-} */

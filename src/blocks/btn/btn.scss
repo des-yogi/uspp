@@ -4,74 +4,57 @@
 
   box-sizing: border-box;
   display: inline-block;
-  margin: 0;
-  // padding: $field-padding-vertical  $field-padding-horizontal;
-  white-space: nowrap;
   vertical-align: middle;
-  user-select: none;
-  text-align: center;
-  font-size: 1em;
-  font-family: inherit;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0;
+  font-family: $font-family--headings;
+  font-size: 20px;
+  font-weight: 700;
   line-height: $line-height;
+  text-align: center;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
+  white-space: nowrap;
+  color: $main-color;
   border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
+  border: none;
+  background-color: $white;
   background-image: none;
+  box-shadow: $shadow-btn;
+  user-select: none;
   cursor: pointer;
 
+  &:active,
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    // background-color: darken($gray-lightest, 10%);
-    // border-color: darken($gray-lighter, 12%);
-  }
-
-  &:active,
-  &:focus {
-    // @include field-focus;
+    color: $white;
+    background-color: $main-color;
   }
 
   &--disabled,
   &:disabled {
-    // opacity: $opacity;
+    color: $text-muted;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    pointer-events: none;
 
     @at-root a.btn--disabled {
       pointer-events: none;
     }
   }
 
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+  &--inverted {
+    color: $white;
+    background-color: $main-color;
 
-
-
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   border: 1px solid $color-main;
-
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     border-color: darken($color-main, 12%);
-  //   }
-
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     border-color: $color-main;
-  //   }
-  // }
+    &:active,
+    &:hover,
+    &:focus {
+      color: $main-color !important;
+      background-color: $white !important;
+    }
+  }
 }
