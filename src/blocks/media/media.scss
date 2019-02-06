@@ -1,9 +1,83 @@
-// В этом файле должны быть стили для БЭМ-блока media, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .media {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__col-photo {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+  }
+
+  &__col-video {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 8);
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+  }
+
+  &__subtitle-link {
+    text-decoration: none;
+    color: $main-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__photo-list,
+  &__video-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__photo-list {
+    margin: 0;
+  }
+
+  &__photo-item {
+
+  }
+
+  &__photo-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      @include img-width-flex;
+    }
+  }
+
+  &__text {
+    color: inherit;
+  }
+
+  &__video-list {
+
+  }
+
+  &__video-item {
+    @include col(xs, 6);
+  }
+
+  &__video-content {
+    margin: 0;
+
+    figcaption {
+      margin-bottom: 0;
+    }
+  }
+
+  &__video-wrapper {
+  }
 }

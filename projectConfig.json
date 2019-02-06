@@ -32,7 +32,8 @@
     "our-partners-block": [],
     "contacts": [],
     "socials": [],
-    "search": []
+    "search": [],
+    "copyrights": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

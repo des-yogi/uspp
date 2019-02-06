@@ -85,8 +85,13 @@ h2 {
     span {
       display:inline-block;
       vertical-align: bottom;
-      padding:7px 20px;
+      padding: 9px 10px 5px;
       background-color: $main-color;
+
+      @media (min-width: $screen-md) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
   }
 }
@@ -140,7 +145,7 @@ h2 {
 
 .h3,
 h3 {
-  font-size: 20px;
+  font-size: 18px;
 
   @media (min-width: $screen-xl) {
     font-size: 20px;
@@ -149,7 +154,7 @@ h3 {
 
 .h4,
 h4 {
-  font-size: 18px;
+  font-size: 16px;
 
   @media (min-width: $screen-xl) {
     font-size: 18px;
@@ -178,8 +183,16 @@ address,
 figure {
   margin-top: ($line-height / 2);
   margin-bottom: ($line-height / 2);
+  font-size: 1em;
   color: currentColor;
   hyphens: auto;
+}
+
+* {
+  &::selection {
+    color: $white;
+    background: $second-color;
+  }
 }
 
 address {
