@@ -35,6 +35,7 @@
   const searchForm = document.getElementById('search-form');
   const searchSubmit = document.querySelector('.search__submit');
   const searchField = document.querySelector('input[type=search]');
+
   const searchHandler = function (e) {
     e.preventDefault();
     if (searchField.classList.contains('open') && searchField.value !== "") {
@@ -59,33 +60,35 @@
 }());
 
 (function(){
-  const partners = new Swiper('.swiper-container', {
+  const partners = new Swiper('.our-partners-block__slider', {
     speed: 400,
-    slidesPerView: 1,
-    spaceBetween: 20,
+    slidesPerView: 2,
+    spaceBetween: 10,
     grabCursor: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     breakpointsInverse: true,
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 2
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 3
-    },
-    768: {
-      slidesPerView: 4
-    },
-    1024: {
-      slidesPerView: 5
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
     }
   });
 }());

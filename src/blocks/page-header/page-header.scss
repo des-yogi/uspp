@@ -13,19 +13,34 @@
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: $shadow-menu;
+
+    @media (min-width: $screen-xl) {
+      box-shadow: none;
+    }
   }
 
   &__lang {
     position: relative;
     width: 80px;
     height: 40px;
-    //padding: 10px 0;
     margin-left: 20px;
     box-shadow: $shadow-menu;
+
+    @media (min-width: $screen-xl) {
+      width: auto;
+      margin-left: 25px;
+      box-shadow: none;
+    }
   }
 
   &__bottom {
     position: relative;
     z-index: 0;
+
+    @media (min-width: $screen-xl) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: $shadow-menu;
+    }
   }
 }

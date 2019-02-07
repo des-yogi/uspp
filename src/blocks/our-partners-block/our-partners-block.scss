@@ -1,9 +1,93 @@
-// В этом файле должны быть стили для БЭМ-блока our-partners-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .our-partners-block {
 
   $block-name:                &; // #{$block-name}__element
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    width: 33px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9px 20px;
+    box-shadow: $shadow-btn;
+    border-radius: $border-radius;
+    user-select: none;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $main-color;
+    }
+  }
+
+  .swiper-button-prev {
+    background-image: svg-load('../img/arrow-prev.svg', fill=$main-color);
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-image: svg-load('../img/arrow-prev.svg', fill=$white);
+    }
+
+    @media (min-width: $screen-md) {
+      margin-right: 20px;
+      margin-left: auto;
+    }
+  }
+
+  .swiper-button-next {
+    background-image: svg-load('../img/arrow-next.svg', fill=$main-color);
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-image: svg-load('../img/arrow-next.svg', fill=$white);
+    }
+  }
+
+  .swiper-slide {
+    text-align: center;
+  }
+
+  &__col {
+    @include col(xs, 12);
+  }
+
+  &__logo-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__ctrl-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-top: 20px;
+
+    .btn--partner {
+      @media (min-width: $screen-md) {
+        order: -1;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 25px;
+    }
+  }
 }

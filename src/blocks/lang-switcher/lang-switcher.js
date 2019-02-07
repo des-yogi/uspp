@@ -1,8 +1,11 @@
 (function () {
   const isMobile = window.isMobile.any;
+  let screenWidth = document.documentElement.clientWidth;
 
-  if (isMobile) {
-    console.log('This - mobile');
+  console.log(screenWidth);
+
+  if (screenWidth < 1280) {
+    console.log('This - mobile width');
 
     var langSwitcher = document.querySelector('.lang-switcher');
     if (langSwitcher) {
