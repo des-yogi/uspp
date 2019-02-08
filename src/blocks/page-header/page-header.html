@@ -37,7 +37,7 @@
         </ul>
       </div>
 
-      <div class="menu-toggle" tabindex="0" role="button" aria-pressed="false" title="Відкрити меню">
+      <div class="menu-toggle" tabindex="0" role="button" title="Відкрити меню">
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -51,11 +51,11 @@
 
     </div>
 
-    <div class="container  page-header__bottom">
-      <!-- <nav class="main-nav">
-        <ul id="menu" class="row  main-nav__menu">
-          <li class="main-nav__item  active">
-            <a class="main-nav__link">Про УСПП</a>
+    <div class="container  page-header__bottom  clearfix">
+      <nav id="hmenu" class="main-nav">
+        <ul class="row  main-nav__menu">
+          <li class="main-nav__item  parent">
+            <a href="" class="main-nav__link">Про УСПП</a>
 
             <ul class="main-nav__submenu">
               <li class="main-nav__submenu-item">
@@ -67,8 +67,8 @@
               <li class="main-nav__submenu-item">
                 <a href="" class="main-nav__link">Партнерство з владою</a>
               </li>
-              <li class="main-nav__submenu-item">
-                <a class="main-nav__link">Наші завдання</a>
+              <li class="main-nav__submenu-item  parent">
+                <a href="#" class="main-nav__link">Наші завдання</a>
 
                 <ul class="main-nav__submenu  main-nav__submenu--level2">
                   <li class="main-nav__submenu-item">
@@ -83,7 +83,7 @@
                 </ul>
 
               </li>
-              <li class="main-nav__submenu-item">
+              <li class="main-nav__submenu-item  parent">
                 <a href="" class="main-nav__link">Офіційно</a>
 
                 <ul class="main-nav__submenu  main-nav__submenu--level2">
@@ -99,7 +99,7 @@
               <li class="main-nav__submenu-item">
                 <a href="" class="main-nav__link">Членство в УСП</a>
               </li>
-              <li class="main-nav__submenu-item">
+              <li class="main-nav__submenu-item  parent">
                 <a href="" class="main-nav__link">Члени УСПП</a>
 
                 <ul class="main-nav__submenu  main-nav__submenu--level2">
@@ -120,7 +120,7 @@
           <li class="main-nav__item">
             <a class="main-nav__link" href="">Новини</a>
           </li>
-          <li class="main-nav__item">
+          <li class="main-nav__item  parent">
             <a class="main-nav__link" href="">Прес-Центр</a>
 
             <ul class="main-nav__submenu  main-nav__submenu--level2">
@@ -142,7 +142,7 @@
             </ul>
 
           </li>
-          <li class="main-nav__item">
+          <li class="main-nav__item  parent">
             <a class="main-nav__link" href="">Міжнародна діяльність</a>
 
             <ul class="main-nav__submenu  main-nav__submenu--level2">
@@ -158,7 +158,7 @@
             </ul>
 
           </li>
-          <li class="main-nav__item">
+          <li class="main-nav__item  parent">
             <a class="main-nav__link" href="">Ініціативи</a>
 
             <ul class="main-nav__submenu  main-nav__submenu--level2">
@@ -177,101 +177,29 @@
 
           <li class="main-nav__item  main-nav__item--socials">
 
-            <ul class="socials">
-              <li class="socials__item">
+            <section class="socials">
+              <div class="socials__item">
                 <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Facebook">
                   <svg width="30" height="30">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#facebook-icon"></use>
                   </svg>
                 </a>
-              </li>
-              <li class="socials__item">
+              </div>
+              <div class="socials__item">
                 <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Youtube">
                   <svg width="41" height="30">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#youtube-icon"></use>
                   </svg>
                 </a>
-              </li>
-              <li class="socials__item">
+              </div>
+              <div class="socials__item">
                 <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="ISO">
                   <img src="img/iso-icon.png" alt="ISO" width="30" height="30">
                 </a>
-              </li>
-            </ul>
+              </div>
+            </section>
             <a class="btn  btn--inverted" href="">Членство в УСПП</a>
           </li>
-        </ul>
-      </nav> -->
-
-      <nav id='hmenu'>
-        <ul class="main-nav__list">
-          <li><a href='#'>Home</a></li>
-          <li><a href='#'>Gallery</a></li>
-          <li><a href='#'>Support</a></li>
-          <li class='active parent'><a href='#'>Categories</a>
-            <ul>
-              <li class='parent'><a href='#'>Category 1</a>
-                <ul>
-                  <li><a href='#'>Sub Category 1</a></li>
-                  <li><a href='#'>Sub Category 2</a></li>
-                  <li><a href='#'>Sub Category 3</a></li>
-                  <li><a href='#'>Sub Category 4</a></li>
-                </ul>
-              </li>
-              <li class='parent'><a href='#'>Category 2</a>
-                <ul>
-                  <li><a href='#'>Sub Сategory 1</a></li>
-                  <li><a href='#'>Sub Сategory 2</a></li>
-                  <li><a href='#'>Sub Сategory 3</a></li>
-                  <li><a href='#'>Sub Сategory 4</a></li>
-                </ul>
-              </li>
-              <li class='parent'><a href='#'>Category 3</a>
-                <ul>
-                  <li><a href='#'>Sub Сategory 1</a></li>
-                  <li><a href='#'>Sub Сategory 2</a></li>
-                  <li><a href='#'>Sub Сategory 3</a></li>
-                  <li><a href='#'>Sub Сategory 4</a></li>
-                </ul>
-              </li>
-              <li class='parent'><a href='#'>Category 4</a>
-                <ul>
-                  <li><a href='#'>Sub Сategory 1</a></li>
-                  <li><a href='#'>Sub Сategory 2</a></li>
-                  <li><a href='#'>Sub Сategory 3</a></li>
-                  <li><a href='#'>Sub Сategory 4</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href='#'>About us</a></li>
-          <li class='parent'><a href='#'>Category Blog</a>
-            <ul>
-              <li class='parent'><a href='#'>Blog 1</a>
-                <ul>
-                  <li><a href='#'>Sub Blog 1</a></li>
-                  <li><a href='#'>Sub Blog 2</a></li>
-                  <li><a href='#'>Sub Blog 3</a></li>
-                </ul>
-              </li>
-              <li class='parent'><a href='#'>Blog 2</a>
-                <ul>
-                  <li><a href='#'>Sub Blog 1</a></li>
-                  <li><a href='#'>Sub Blog 2</a></li>
-                  <li><a href='#'>Sub Blog 3</a></li>
-                </ul>
-              </li>
-              <li class='parent'><a href='#'>Blog 3</a>
-                <ul>
-                  <li><a href='#'>Sub Blog 1</a></li>
-                  <li><a href='#'>Sub Blog 2</a></li>
-                  <li><a href='#'>Sub Blog 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href='#'>Vacancy</a></li>
-          <li><a href='#'>Contact</a></li>
         </ul>
       </nav>
     </div>
