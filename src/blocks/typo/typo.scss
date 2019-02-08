@@ -1,30 +1,53 @@
-// Этот блок ответственен ТОЛЬКО за типографику проекта.
-// Не пишите тут какую-либо стороннюю стилизацию.
+/* noto-sans-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'),
+       url('../fonts/noto-sans-v7-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/noto-sans-v7-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff'),
-//        url('../fonts/FONTNAME.ttf')  format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-// }
+/* noto-sans-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+       url('../fonts/noto-sans-v7-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/noto-sans-v7-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-500 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('../fonts/roboto-v18-cyrillic_latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v18-cyrillic_latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('../fonts/roboto-v18-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v18-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 
-
-html,
 body {
   // ТОЛЬКО типографика!
   font-family: $font-family;
-  font-size: 14px;
-  line-height: $line-height;
   text-rendering: optimizeLegibility;
-  color: $text-color;
   text-decoration-skip-ink: auto;
-
-  @media (min-width: $screen-xl) {
-    font-size: 16px;
-  }
 }
 
 .h1,
@@ -39,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family;
+  font-family: $font-family--headings;
   font-weight: 700;
   line-height: $line-height;
   color: $text-color;
@@ -52,6 +75,25 @@ h1,
 h2 {
   margin-top: 0;
   margin-bottom: ($line-height / 2);
+  text-transform: uppercase;
+
+  &--decor {
+    text-align: left;
+    color: $white;
+    border-bottom: 2px solid $main-color;
+
+    span {
+      display:inline-block;
+      vertical-align: bottom;
+      padding: 9px 10px 5px;
+      background-color: $main-color;
+
+      @media (min-width: $screen-md) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
 }
 
 .h3,
@@ -64,37 +106,71 @@ h5,
 h6 {
   margin-top: ($line-height / 2);
   margin-bottom: ($line-height / 2);
+  text-align: left;
 }
 
-// .h1,
-/* h1 {
-  font-size: $font-size--h1;
+.h1,
+h1 {
+  font-size: 28px;
+
+  @media (min-width: $screen-xl) {
+    font-size: 31px;
+  }
+
+  &--decor {
+    //margin-bottom: 25px;
+
+    @media (min-width: $screen-xl) {
+      //margin-bottom: 30px;
+    }
+  }
 }
 
-// .h2,
+.h2,
 h2 {
-  font-size: $font-size--h2;
+  font-size: 23px;
+
+  @media (min-width: $screen-xl) {
+    font-size: 25px;
+  }
+
+  &--decor {
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 40px;
+    }
+  }
 }
 
-// .h3,
+.h3,
 h3 {
-  font-size: $font-size--h3;
+  font-size: 18px;
+
+  @media (min-width: $screen-xl) {
+    font-size: 20px;
+  }
 }
 
-// .h4,
+.h4,
 h4 {
-  font-size: $font-size--h4;
+  font-size: 16px;
+
+  @media (min-width: $screen-xl) {
+    font-size: 18px;
+  }
 }
 
-// .h5,
-h5 {
-  font-size: $font-size--h5;
-}
-
-// .h6,
+.h5,
+.h6,
+h5,
 h6 {
-  font-size: $font-size--h6;
-} */
+  font-size: 14px;
+
+  @media (min-width: $screen-xl) {
+    font-size: 16px;
+  }
+}
 
 .p,
 p,
@@ -107,8 +183,16 @@ address,
 figure {
   margin-top: ($line-height / 2);
   margin-bottom: ($line-height / 2);
+  font-size: 1em;
   color: currentColor;
   hyphens: auto;
+}
+
+* {
+  &::selection {
+    color: $white;
+    background: $second-color;
+  }
 }
 
 address {
@@ -170,14 +254,14 @@ a {
   font-weight: inherit;
   line-height: inherit;
   text-decoration: underline;
-  color: $second-color;
+  color: inherit;
   text-decoration-skip-ink: auto;
   transition: all 0.3s ease-out;
 
   &:hover,
   &:active,
   &:focus {
-    //color: new color;
+    color: $main-color;
   }
 }
 

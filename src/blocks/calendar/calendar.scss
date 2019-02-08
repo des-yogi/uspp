@@ -1,0 +1,49 @@
+.calendar {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 12);
+    margin-bottom: 20px;
+
+    &:first-child {
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__events-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__events-item {
+    border-bottom: 1px solid $text-muted;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__events-link {
+    display: block;
+    padding: 20px 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__events-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: currentColor;
+  }
+}

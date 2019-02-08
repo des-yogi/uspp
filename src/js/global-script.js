@@ -21,33 +21,74 @@
 //   // code
 // });
 
+
 (function(){
-  // code
-  const name = 'Doode';
-  let str = `
-  Здравствуйте ${name}.
-  Мы в ${new Date().getFullYear()} году
-  `;
-  let caption = document.querySelector('h1');
-  console.log(str);
+  const Page = document.querySelector('.page');
+  if (Page.classList.contains('no-js')) {
+    Page.classList.remove('no-js');
+    Page.classList.add('js');
+  }
+  return;
+}());
 
-  const newCaption = 'ES6 работает';
-  let anyFn = (elem) => {
-    elem.innerText = `Новый заголовок: ${name}, ${newCaption}`;
+(function(){
+  const searchForm = document.getElementById('search-form');
+  const searchSubmit = document.querySelector('.search__submit');
+  const searchField = document.querySelector('input[type=search]');
+
+  const searchHandler = function (e) {
+    e.preventDefault();
+    if (searchField.classList.contains('open') && searchField.value !== "") {
+      searchForm.submit();
+    } else if (!searchField.classList.contains('open')) {
+        searchField.classList.add('open');
+    } else {
+        searchField.classList.remove('open');
+    }
   };
-  anyFn(caption);
 
-  // for ...of
-const array = ['a', 'b', 'c', 'd'];
-for (const element of array) {
-    console.log(element);
-}
+  if (searchSubmit) {
+    searchSubmit.addEventListener('click', searchHandler);
+  }
+}());
 
-function printf(format, ...params) {
-  console.log('params: ', params);
-  console.log('format: ', format);
-}
+//iframe lazyLoad (b-lazy)
+(function(){
+  const bLazy = new Blazy({
+    container: '.media__video-wrapper'
+  });
+}());
 
-printf('%s %d %.2f', 'adrian', 321, Math.PI);
-
+(function(){
+  const partners = new Swiper('.our-partners-block__slider', {
+    speed: 400,
+    slidesPerView: 2,
+    spaceBetween: 10,
+    grabCursor: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpointsInverse: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    }
+  });
 }());

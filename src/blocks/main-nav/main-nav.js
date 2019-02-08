@@ -1,75 +1,147 @@
-(function(){
+(function($) {
 
-  // Добавление/удаление модификаторов при клике на переключение видимости
-  var toggler = document.getElementById('main-nav-toggler');
-  if(toggler){
-    toggler.addEventListener('click', mainNavVisibleToggle);
+  $.fn.menumaker = function(options) {
 
-    function mainNavVisibleToggle(e) {
-      e.preventDefault();
-      toggler.classList.toggle('burger--close'); // модификатор иконки (должен быть .burger)
-      document.getElementById('main-nav').classList.toggle('main-nav--open');
-    }
-  }
+      var cssmenu = $(this), settings = $.extend({
+        title: "Menu",
+        format: "dropdown",
+        sticky: false
+      }, options);
 
-  // Добавление/удаление модификаторов при фокусировке на ссылочном элементе
-  var linkClassName = 'main-nav__link';
-  var linkClassNameShowChild = 'main-nav__item--show-child';
-  var findLinkClassName = new RegExp(linkClassName);
-  // Слежение за всплывшим событием focus (нужно добавить класс, показывающий потомков)
-  document.addEventListener('focus', function(event) {
-    // Если событие всплыло от одной из ссылок гл. меню
-    if (findLinkClassName.test(event.target.className)) {
-      // Добавим классы, показывающие списки вложенных уровней, на всех родителей
-      event.target.parents('.main-nav__item').forEach(function(item){
-        item.classList.add(linkClassNameShowChild);
+      return this.each(function() {
+        //cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
+        /*$(this).find("#menu-button").on('click', function(){
+          $(this).toggleClass('menu-opened');
+          var mainmenu = $(this).next('ul');
+          if (mainmenu.hasClass('open')) {
+            mainmenu.hide().removeClass('open');
+          }
+          else {
+            mainmenu.show().addClass('open');
+            if (settings.format === "dropdown") {
+              mainmenu.find('ul').show();
+            }
+          }
+        });*/
+
+        // Анимация открятия меню и субменю, скорость анимации задается кастомно
+        $.fn.animateThisElem = function(durationValue) {
+          if (durationValue === '') durationValue === 200;
+          return this.animate({
+            height: 'toggle'
+            }, {
+            duration: durationValue,
+            specialEasing: {
+              //opacity: 'linear',
+              height: 'swing'
+            }
+          });
+        };
+
+        // Переключатель состояния меню и кнопки бургера с поддержкой доступности
+        var menuStateToggler = function (e) {
+          //$(this).toggleClass('menu-opened');
+          var mainmenu = $('.main-nav__menu');
+          if (mainmenu.hasClass('open')) {
+            //mainmenu.hide().removeClass('open');
+            $('.menu-toggle').removeClass('active').attr('area-pressed', 'false');
+            mainmenu.animateThisElem(200).removeClass('open');
+          }
+          else {
+            //mainmenu.show().addClass('open');
+            $('.menu-toggle').addClass('active').attr('area-pressed', 'true');
+            mainmenu.animateThisElem(300).addClass('open');
+
+            if (settings.format === "dropdown") {
+              mainmenu.find('ul').animateThisElem(300);
+            }
+          }
+        };
+
+        // обрабатываем не только клик мышью, но нажатие с клавиатуры
+        $('.menu-toggle').on('click', menuStateToggler);
+        $('.menu-toggle').on('keypress', menuStateToggler);
+
+        cssmenu.find('li ul').parent().addClass('parent');
+
+        var multiTg = function() {
+          cssmenu.find(".parent>a").after('<span class="submenu-button"></span>');
+          cssmenu.find('.parent>a').on('click', function() {
+            event.preventDefault();
+            $(this).siblings('span').toggleClass('submenu-opened');
+            if ($(this).siblings('ul').hasClass('open')) {
+              $(this).siblings('ul').removeClass('open').animateThisElem(200);
+            }
+            else {
+              $(this).siblings('ul').addClass('open').animateThisElem(300);
+            }
+          });
+        };
+
+        if (settings.format === 'multitoggle') multiTg();
+        else cssmenu.addClass('dropdown');
+
+        if (settings.sticky === true) cssmenu.css('position', 'fixed');
+
+        var resizeFix = function() {
+          if ($( window ).width() > 1279) {
+            cssmenu.find('ul').show();
+          }
+
+          if ($(window).width() <= 1279) {
+            cssmenu.find('ul').hide().removeClass('open');
+          }
+        };
+        resizeFix();
+        return $(window).on('resize', resizeFix);
+
       });
-    }
-  }, true);
-  // Слежение за всплывшим событием blur (нужно убрать класс, показывающий потомков)
-  document.addEventListener('blur', function(event) {
-    // Если событие всплыло от одной из ссылок гл. меню
-    if (findLinkClassName.test(event.target.className)) {
-      // Уберем все классы, показывающие списки 2+ уровней
-      // event.target.closest('.main-nav').querySelectorAll('.'+linkClassNameShowChild).forEach(function(item){
-      document.querySelectorAll('.'+linkClassNameShowChild).forEach(function(item){
-        item.classList.remove(linkClassNameShowChild);
-      });
-    }
-  }, true);
-
-
-
-  // Добавление метода .parents()
-  Element.prototype.parents = function(selector) {
-    var elements = [];
-    var elem = this;
-    var ishaveselector = selector !== undefined;
-
-    while ((elem = elem.parentElement) !== null) {
-      if (elem.nodeType !== Node.ELEMENT_NODE) {
-        continue;
-      }
-
-      if (!ishaveselector || elem.matches(selector)) {
-        elements.push(elem);
-      }
-    }
-
-    return elements;
   };
+})(jQuery);
 
-  // Добавление метода .closest() (полифил, собственно)
-  // (function(e){
-  //  e.closest = e.closest || function(css){
-  //    var node = this;
+(function($){
 
-  //    while (node) {
-  //       if (node.matches(css)) return node;
-  //       else node = node.parentElement;
-  //    }
-  //    return null;
-  //  }
-  // })(Element.prototype);
+  $(document).ready(function() {
 
-}());
+    $("#hmenu").menumaker({
+      title: "Menu",
+      format: "multitoggle"
+    });
+
+    //инициалтзация переключателя меня для доступности в полож. aria-pressed="false"
+    $('.menu-toggle').attr('area-pressed', 'false');
+
+    //$("#hmenu").prepend("<div id='menu-line'></div>");
+    var foundActive = false, activeElement, linePosition = 0, menuLine = $("#hmenu #menu-line"), lineWidth, defaultPosition, defaultWidth;
+
+    $("#hmenu > ul > li").each(function() {
+      if ($(this).hasClass('active')) {
+        activeElement = $(this);
+        foundActive = true;
+      }
+    });
+
+    if (foundActive === false) {
+      activeElement = $("#hmenu > ul > li").first();
+    }
+
+    defaultWidth = lineWidth = activeElement.width();
+
+    defaultPosition = linePosition = activeElement.position().left;
+
+    /*menuLine.css("width", lineWidth);
+    menuLine.css("left", linePosition);
+
+    $("#hmenu > ul > li").hover(function() {
+      activeElement = $(this);
+      lineWidth = activeElement.width();
+      linePosition = activeElement.position().left;
+      menuLine.css("width", lineWidth);
+      menuLine.css("left", linePosition);
+    },
+    function() {
+      menuLine.css("left", defaultPosition);
+      menuLine.css("width", defaultWidth);
+    });*/
+  });
+})(jQuery);

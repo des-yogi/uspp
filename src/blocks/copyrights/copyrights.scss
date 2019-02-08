@@ -1,0 +1,27 @@
+.copyrights {
+  margin-top: 20px;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__text {
+    padding-top: 20px;
+    border-top: 1px solid $text-muted;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  &__owner,
+  &__dev {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+  }
+
+  &__owner {
+    margin-right: 10px;
+  }
+}

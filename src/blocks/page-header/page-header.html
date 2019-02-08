@@ -1,11 +1,207 @@
-<!--DEV
-
-Нужно убрать пробел между @-ами:
-
-@ @include('blocks/page-header/page-header.html')
-
--->
-
 <header class="page-header" role="banner">
-  page-header
+
+    <div class="container  page-header__top">
+
+      <a href="/" class="logo  logo--header" title="УСПП logo">
+        <picture>
+          <source srcset="img/uspp-logo-full.svg" media="(min-width: 768px)">
+          <img src="img/uspp-logo.svg" alt="УСПП logo" width="62.6" height="76">
+        </picture>
+      </a>
+
+      <article class="search">
+        <h4 class="visually-hidden">Строка поиска по сайту</h4>
+        <form id="search-form" action="" method="get">
+          <div class="search__field-wrapper">
+            <input type="search" name="query" value="" placeholder="Поиск">
+            <button class="search__submit" type="submit" aria-label="Кнопка Искать по сайту">
+              <svg width="24" height="24">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#search-icon"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </article>
+
+      <div class="page-header__lang">
+        <ul class="lang-switcher">
+          <li class="lang-switcher__item  active">
+            <a class="lang-switcher__link  active">Укр</a>
+          </li>
+          <li class="lang-switcher__item">
+            <a class="lang-switcher__link" href="">Рус</a>
+          </li>
+          <li class="lang-switcher__item">
+            <a class="lang-switcher__link" href="">Анг</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-toggle" tabindex="0" role="button" title="Відкрити меню">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="cross">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container  page-header__bottom  clearfix">
+      <nav id="hmenu" class="main-nav">
+        <ul class="row  main-nav__menu">
+          <li class="main-nav__item  parent">
+            <a href="" class="main-nav__link">Про УСПП</a>
+
+            <ul class="main-nav__submenu">
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">З истории УСПП</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Лідери УСПП</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Партнерство з владою</a>
+              </li>
+              <li class="main-nav__submenu-item  parent">
+                <a href="#" class="main-nav__link">Наші завдання</a>
+
+                <ul class="main-nav__submenu  main-nav__submenu--level2">
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Законодавчі ініціативи</a>
+                  </li>
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Корпоративна безпека</a>
+                  </li>
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Соціальна відповідальність</a>
+                  </li>
+                </ul>
+
+              </li>
+              <li class="main-nav__submenu-item  parent">
+                <a href="" class="main-nav__link">Офіційно</a>
+
+                <ul class="main-nav__submenu  main-nav__submenu--level2">
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Рішення з’їздів УСПП</a>
+                  </li>
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Постанови Правління</a>
+                  </li>
+                </ul>
+
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Членство в УСП</a>
+              </li>
+              <li class="main-nav__submenu-item  parent">
+                <a href="" class="main-nav__link">Члени УСПП</a>
+
+                <ul class="main-nav__submenu  main-nav__submenu--level2">
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Громадські органзації / Галузеві асоціації - члени УСПП</a>
+                  </li>
+                  <li class="main-nav__submenu-item">
+                    <a href="" class="main-nav__link">Члени УСПП за теріторіальною ознакою</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Регіональні відділення</a>
+              </li>
+            </ul>
+
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="">Новини</a>
+          </li>
+          <li class="main-nav__item  parent">
+            <a class="main-nav__link" href="">Прес-Центр</a>
+
+            <ul class="main-nav__submenu  main-nav__submenu--level2">
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Про нас пишуть</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Вісник УСПП</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Календар подій</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Інформаційні матеріали про УСПП</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Текст с контактами</a>
+              </li>
+            </ul>
+
+          </li>
+          <li class="main-nav__item  parent">
+            <a class="main-nav__link" href="">Міжнародна діяльність</a>
+
+            <ul class="main-nav__submenu  main-nav__submenu--level2">
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Бізнес-агенція в Канаді (ссылка на сайт)</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Центр підтримки експорту (ссылка на сайт)</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Наші партнери за кордоном</a>
+              </li>
+            </ul>
+
+          </li>
+          <li class="main-nav__item  parent">
+            <a class="main-nav__link" href="">Ініціативи</a>
+
+            <ul class="main-nav__submenu  main-nav__submenu--level2">
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Платформа економічного патріотизму</a>
+              </li>
+              <li class="main-nav__submenu-item">
+                <a href="" class="main-nav__link">Антикризова рада громадських організацій</a>
+              </li>
+            </ul>
+
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="">Контакти</a>
+          </li>
+
+          <li class="main-nav__item  main-nav__item--socials">
+
+            <section class="socials">
+              <div class="socials__item">
+                <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Facebook">
+                  <svg width="30" height="30">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#facebook-icon"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="socials__item">
+                <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Youtube">
+                  <svg width="41" height="30">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#youtube-icon"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="socials__item">
+                <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="ISO">
+                  <img src="img/iso-icon.png" alt="ISO" width="30" height="30">
+                </a>
+              </div>
+            </section>
+            <a class="btn  btn--inverted" href="">Членство в УСПП</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
 </header>

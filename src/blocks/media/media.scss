@@ -1,0 +1,120 @@
+.media {
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 60px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__col-photo {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-video {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 8);
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle-link {
+    text-decoration: none;
+    color: $main-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__photo-list,
+  &__video-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__photo-list {
+    margin: 0;
+  }
+
+  &__photo-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      flex-basis: 35%;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-basis: 183px;
+    }
+
+    img {
+      display: block;
+      @include img-width-flex;
+
+      @media (min-width: $screen-md) {
+        height: 100%;
+      }
+    }
+  }
+
+  &__photo-text {
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: $shadow;
+
+    @media (min-width: $screen-md) {
+      flex: 1 1;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &__photo-title {
+    margin: 0;
+    color: inherit;
+    font-size: 14px;
+  }
+
+  &__video-item {
+    @include col(xs, 6);
+  }
+
+  &__video-content {
+    margin: 0;
+
+    figcaption {
+      margin-bottom: 0;
+    }
+  }
+}

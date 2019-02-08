@@ -1,0 +1,81 @@
+.subscription-form {
+  padding: 25px 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  background-color: $main-color;
+
+  @media (min-width: $screen-md) {
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 30px 25px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    margin-top: 0;
+    color: $white;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__form {
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      padding-top: 10px;
+      background-image: svg-load('../img/envelope-icon.svg', fill=$white);
+      background-repeat: no-repeat;
+      background-size: 54px 52px;
+      background-position: right 40px top;
+    }
+  }
+
+  &__ctrl-wrapper {
+
+    input {
+      width: 100%;
+      max-height: 42px;
+      padding: 13px 10px;
+    }
+
+    .btn {
+      width: 100%;
+
+      @media (min-width: $screen-xl) {
+        min-width: 185px;
+      }
+    }
+
+    &:first-child {
+
+      @media (min-width: $screen-xl) {
+        width: 360px;
+        margin-right: 20px;
+      }
+    }
+
+  }
+
+  &__error {
+    display: block;
+    width: 100%;
+    min-height: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: $white;
+  }
+}

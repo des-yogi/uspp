@@ -1,11 +1,71 @@
-<!--DEV
+<footer class="row  page-footer" role="contentinfo">
 
-Нужно убрать пробел между @-ами:
+  <div class="page-footer__about-col">
 
-@ @include('blocks/page-footer/page-footer.html')
+    <a href="/" class="logo" title="УСПП logo">
+      <img src="img/uspp-logo-full.svg" alt="УСПП logo" width="585" height="76">
+    </a>
 
--->
+    <section class="contacts">
+      <h3 class="visually-hidden">Наши контакты</h3>
 
-<footer class="page-footer" role="contentinfo">
-  page-footer
+      <ul class="socials">
+        <li class="socials__item">
+          <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Facebook">
+            <svg width="30" height="30">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#facebook-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Youtube">
+            <svg width="41" height="30">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#youtube-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="ISO">
+            <img src="img/iso-icon.png" alt="ISO" width="30" height="30">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <span>01001, м. Київ, вул. Хрещатик, 34</span>
+        </li>
+        <li class="contacts__item">
+          <span>Тел:</span>&nbsp;<a href="tel:+0442783069">044 278-30-69</a>,&nbsp;<a href="tel:+0442783069">044 278-30-69</a>
+        </li>
+        <li class="contacts__item">
+          <span>E-mail:</span>&nbsp;<a href="mailto:uspp@uspp.org.ua">uspp@uspp.org.ua</a>
+        </li>
+      </ul>
+
+    </section>
+  </div>
+
+  <div class="page-footer__links-col">
+    <a href="" class="page-footer__link-item" title="А. Кінах сайт" target="_blank" rel="nofollow noopener">
+      <div class="page-footer__img-wrapper">
+        <img src="img/kinah-tmb.jpg" alt="А. Кінах" width="113" height="113">
+      </div>
+      <h6>А. Кінах</h6>
+    </a>
+    <a href="" class="page-footer__link-item" title="ООРУ сайт" target="_blank" rel="nofollow noopener">
+      <div class="page-footer__img-wrapper">
+        <img src="img/ooru-tmb.jpg" alt="ООРУ" width="113" height="113">
+      </div>
+      <h6>ООРУ</h6>
+    </a>
+  </div>
+
+  <article class="copyrights">
+    <div class="copyrights__text">
+      <span class="copyrights__owner">© 1992&thinsp;–&thinsp;2018&emsp;Український союз промисловців та підприємців</span>
+      <span class="copyrights__dev">Разработка сайта&ensp;<a href="https://it-doors.com" target="_blank" rel="nofollow noopener" title="IT-Doors">IT-Doors Outsourcing</a></span>
+    </div>
+  </article>
+
 </footer>

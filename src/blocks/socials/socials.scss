@@ -1,0 +1,26 @@
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-left: 0;
+  list-style: none;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__item {
+    margin-right: 10px;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    @include text-hide;
+    padding: 0 !important;
+
+    &:hover,
+    &:focus {
+      background-color: $white !important;
+    }
+  }
+}

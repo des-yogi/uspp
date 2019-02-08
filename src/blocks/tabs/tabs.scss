@@ -1,19 +1,3 @@
-// В этом файле должны быть стили для БЭМ-блока tabs, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$gray-lightest:               hsl(0, 0%, 90%) !default;
-
-$text-color:                  hsl(0, 0%, 10%) !default;
-$text-color--muted:           hsl(0, 0%, 50%) !default;
-
-$border-color:                hsl(0, 0%, 60%) !default;
-
-$line-height:                 1.375em !default;
-
-$field-padding-vertical:      0.3em !default;
-$field-padding-horizontal:    0.7em !default;
-
 .tabs {
 
   $block-name:                &; // #{$block-name}__element
@@ -21,62 +5,96 @@ $field-padding-horizontal:    0.7em !default;
   margin-top: $line-height;
   margin-bottom: $line-height;
 
+  @media (min-width: $screen-md) {
+    margin-top: 0;
+  }
+
   &__links {
-    margin: 0;
-    padding: 0;
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: baseline;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
     cursor: pointer;
 
     .no-js & {
       display: none;
     }
 
-    &:after {
-      content: '';
-      flex-grow: 1;
-      height: 1px;
-      background-color: $border-color;
+    @media (min-width: $screen-xl) {
+      margin-bottom: 40px;
     }
   }
 
   &__link-wrap {
+    flex: 1 1;
     position: relative;
-    border: 1px solid $border-color;
-
-    &:not(:last-child) {
-      border-right: none;
-    }
+    margin-right: 10px;
+    margin-bottom: 10px;
 
     &--active {
 
       #{$block-name}__link {
-        color: $text-color;
-        background-color: #fff;
+        color: $main-color;
+        background-color: inherit;
+        cursor: default !important;
+
+        @media (min-width: $screen-xl) {
+          border-color: currentColor;
+
+          &::after {
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border: 5px solid currentColor;
+            border-left-color: rgba(0, 0, 0, 0);
+            border-right-color: rgba(0, 0, 0, 0);
+            border-bottom-color: rgba(0, 0, 0, 0);
+          }
+        }
       }
+    }
+
+    &:last-child {
+
+      @media (min-width: $screen-xl) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 0;
     }
   }
 
   &__link {
+    position: relative;
     display: block;
-    padding: $field-padding-vertical $field-padding-horizontal;
-    color: $text-color--muted;
-    text-decoration: none;
-    background-color: $gray-lightest;
+    padding: 7px 10px;
+    font-size: 16px;
+    color: $text-muted;
 
-    &:hover,
-    &:focus {
-      color: $text-color--muted;
+    @media (min-width: $screen-md) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 13px;
+      padding-bottom: 13px;
+      box-shadow: none;
+      border-bottom: 2px solid $text-muted;
     }
   }
 
   &__content-wrapper {
     display: block;
-    padding: $field-padding-vertical $field-padding-horizontal;
-    border: 1px solid $border-color;
-    border-top: none;
   }
 
   &__content-item {
@@ -89,7 +107,119 @@ $field-padding-horizontal:    0.7em !default;
 
       .js & {
         display: block;
+
+        @media (min-width: $screen-xl) {
+          display: flex;
+        }
       }
+    }
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: stretch;
+    }
+  }
+
+  &__content-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    text-decoration: none;
+    box-shadow: $shadow;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media (min-width: $screen-xl) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:nth-child(n+4) {
+      display: none;
+
+      @media (min-width: $screen-xl) {
+        display: flex;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      align-content: space-between;
+      width: calc(50% - 10px);
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content-img-wrapper {
+    flex: 0 1;
+    min-width: 113px;
+    min-height: 113px;
+    height: auto;
+    //flex-basis: 113px;
+    margin-right: 10px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      @include img-hight-flex;
+
+      @media (min-width: $screen-md) {
+        width: 100%;
+      }
+
+      @media (min-width: $screen-xl) {
+
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      flex: 1 0;
+      max-width: 33%;
+      height: auto;
+      margin-right: 15px;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex: 1 0;
+      max-width: none;
+      width: 183px;
+      height: 100%;
+      margin-right: 20px;
+    }
+  }
+
+  &__content-block-text {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+
+    h4 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: inherit;
+    }
+
+    span {
+      margin-top: auto;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 15px;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex: 1 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
   }
 }
