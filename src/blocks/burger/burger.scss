@@ -10,7 +10,7 @@
   box-shadow: $shadow-menu;
 
   @media (min-width: $screen-md) {
-    margin-right: 20px;
+    margin-right: 0;
     margin-left: 25px;
   }
   @media (min-width: $menu-desktop-width) {

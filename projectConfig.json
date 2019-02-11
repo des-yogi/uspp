@@ -34,7 +34,11 @@
     "socials": [],
     "search": [],
     "copyrights": [],
-    "offside": []
+    "offside": [],
+    "off-canvas": [],
+    "page-404": [],
+    "partnership": [],
+    "accordion": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
