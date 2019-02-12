@@ -59,6 +59,20 @@
   });
 }());
 
+//iframe lazyLoad (b-lazy)
+(function(){
+  const bLazyHerald = new Blazy({
+    container: '.herald-uspp'
+  });
+}());
+
+//iframe lazyLoad (b-lazy)
+(function(){
+  const bLazyHerald = new Blazy({
+    container: '.video-gallery'
+  });
+}());
+
 (function(){
   const partners = new Swiper('.our-partners-block__slider', {
     speed: 400,

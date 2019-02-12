@@ -32,7 +32,7 @@
     &.active {
 
       a {
-        background-color: $second-color;
+        background-color: $main-color;
         text-decoration: none;
         color: $white;
         pointer-events: none;
@@ -57,7 +57,8 @@
     white-space: nowrap;
     user-select: none;
     font-size: 20px;
-    font-family: inherit;
+    font-family: $font-family--headings;
+    font-weight: 700;
     line-height: 42px;
     text-decoration: none;
     text-transform: none;
@@ -68,33 +69,33 @@
     background-image: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 12px 24px;
+    background-size: 10px 20px;
     box-shadow: $shadow;
-    transition: all 0.2s ease-out;
+    transition: $transition;
     cursor: pointer;
 
     &:hover,
     &:focus {
-      background-color: $second-color;
+      background-color: $main-color;
       text-decoration: none;
       color: $white;
     }
 
     &--prev {
-      //background-image: svg-load('../img/left-arrow.svg', fill=$second-color);
+      background-image: svg-load('../img/arrow-prev.svg', fill=$main-color);
 
       &:hover,
       &:focus {
-        //background-image: svg-load('../img/left-arrow.svg', fill=$white);
+        background-image: svg-load('../img/arrow-prev.svg', fill=$white);
       }
     }
 
     &--next {
-      //background-image: svg-load('../img/right-arrow.svg', fill=$second-color);
+      background-image: svg-load('../img/arrow-next.svg', fill=$main-color);
 
       &:hover,
       &:focus {
-        //background-image: svg-load('../img/right-arrow.svg', fill=$white);
+        background-image: svg-load('../img/arrow-next.svg', fill=$white);
       }
     }
   }
@@ -103,10 +104,10 @@
 .pagination__item.disabled {
 
   .pagination__link--prev {
-    //background-image: svg-load('../img/left-arrow.svg', fill=$text-muted);
+    background-image: svg-load('../img/arrow-prev.svg', fill=$text-muted);
   }
 
   .pagination__link--next {
-    //background-image: svg-load('../img/right-arrow.svg', fill=$text-muted);
+    background-image: svg-load('../img/arrow-next.svg', fill=$text-muted);
   }
 }

@@ -38,7 +38,14 @@
     "off-canvas": [],
     "page-404": [],
     "partnership": [],
-    "accordion": []
+    "accordion": [],
+    "content-page": [],
+    "regional-office": [],
+    "contacts-page": [],
+    "leaders": [],
+    "herald-uspp": [],
+    "photo-gallery": [],
+    "video-gallery": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

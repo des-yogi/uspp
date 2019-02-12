@@ -1,0 +1,36 @@
+.content-page {
+
+  $block-name:                &; // #{$block-name}__element
+
+  text-align: left;
+
+  .col {
+    @include col(xs, 12);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1,
+  h2 {
+    text-align: inherit;
+  }
+
+  img {
+    align-self: center;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+}
