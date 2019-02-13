@@ -11,7 +11,7 @@
 @import '../../node_modules/accordion-js/dist/accordion.css';
 @import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
 @import '../../node_modules/offside-js/dist/offside.css';
-@import '../../node_modules/metismenu/dist/metisMenu.css ';
+@import '../../node_modules/metismenu/dist/metisMenu.css';
 @import './src/blocks/page/page.scss';
 @import './src/blocks/typo/typo.scss';
 @import './src/blocks/page-header/page-header.scss';
@@ -58,3 +58,5 @@
 @import './src/blocks/herald-uspp/herald-uspp.scss';
 @import './src/blocks/photo-gallery/photo-gallery.scss';
 @import './src/blocks/video-gallery/video-gallery.scss';
+@import './src/blocks/large-table/large-table.scss';
+@import './src/blocks/footable/footable.scss';

@@ -1,0 +1,17 @@
+.large-table {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__col {
+    @include col(xs, 12);
+  }
+
+  &__info {
+    margin-bottom: 25px;
+  }
+
+  &__name {
+    color: $title-color;
+  }
+}
+

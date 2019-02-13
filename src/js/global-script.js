@@ -22,6 +22,7 @@
 // });
 
 
+
 (function(){
   const Page = document.querySelector('.page');
   if (Page.classList.contains('no-js')) {
@@ -106,3 +107,17 @@
     }
   });
 }());
+
+$( document ).ready(function() {
+  $('.table').footable({
+    'expandFirst': true,
+    'showHeader': true,
+    'breakpoints': {
+      "xs": 320, // extra small
+      "sm": 480, // small
+      "md": 768, // medium
+      "lg": 992, // large
+      "xl": 1280 // x-large
+    }
+  });
+});
