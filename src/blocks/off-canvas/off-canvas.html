@@ -1,60 +1,59 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/off-canvas/off-canvas.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
 -->
+
 <!-- Off-canvas element  -->
-    <nav id="my-menu" class="sidebar-nav">
-      <button type="button" id="my-button">Close</button>
-      <ul id="mobile-nav" class="metismenu">
+<nav id="off-canvas-menu" class="off-canvas  sidebar-nav">
+
+  <div class="off-canvas__btn-wrapper">
+    <button class="off-canvas__close" type="button" id="off-canvas-close"  aria-label="Закрыть">
+      <span class="close"><span></span></span>
+    </button>
+  </div>
+
+  <ul id="mobile-nav" class="metismenu">
+    <li class="">
+      <a class="has-arrow" href="#" aria-expanded="false">Пункт меню</a>
+      <ul class="mm-collapse" style="height: 0px;">
+        <li><a href="#">Fork</a></li>
+        <li><a href="#">Star</a></li>
+        <li><a href="#">Issues</a></li>
+      </ul>
+     </li>
+     <li class="">
+       <a class="has-arrow" href="#" aria-expanded="false">Menu 0</a>
+       <ul class="mm-collapse" style="height: 0px;">
+         <li><a href="#">item 0.1</a></li>
+         <li><a href="#">item 0.2</a></li>
+         <li><a href="#">item 0.3</a></li>
+         <li><a href="#">item 0.4</a></li>
+       </ul>
+     </li>
+     <li class="">
+       <a class="has-arrow" href="#" aria-expanded="false">Menu 1</a>
+       <ul class="mm-collapse" style="height: 0px;">
+        <li><a href="#" aria-expanded="false">item 1.1</a></li>
+        <li><a href="#" aria-expanded="false">item 1.2</a></li>
         <li class="">
-          <a class="has-arrow" href="#" aria-expanded="false">Пункт меню</a>
+          <a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
           <ul class="mm-collapse" style="height: 0px;">
-            <li><a href="#">Fork</a></li>
-            <li><a href="#">Star</a></li>
-            <li><a href="#">Issues</a></li>
+            <li><a href="#">item 1.3.1</a></li>
+            <li><a href="#">item 1.3.2</a></li>
+            <li><a href="#">item 1.3.3</a></li>
+            <li><a href="#">item 1.3.4</a></li>
           </ul>
-       </li>
-       <li class="">
-         <a class="has-arrow" href="#" aria-expanded="false">Menu 0</a>
+        </li>
+        <li><a href="#" aria-expanded="false">item 1.4</a></li>
+        <li class="">
+         <a class="has-arrow" href="#" aria-expanded="false">Menu 1.5</a>
          <ul class="mm-collapse" style="height: 0px;">
-           <li><a href="#">item 0.1</a></li>
-           <li><a href="#">item 0.2</a></li>
-           <li><a href="#">item 0.3</a></li>
-           <li><a href="#">item 0.4</a></li>
+           <li><a href="#">item 1.5.1</a></li>
+           <li><a href="#">item 1.5.2</a></li>
+           <li><a href="#">item 1.5.3</a></li>
+           <li><a href="#">item 1.5.4</a></li>
          </ul>
        </li>
-       <li id="removable" class="">
-         <a class="has-arrow" href="#" aria-expanded="false">Menu 1</a>
-         <ul class="mm-collapse" style="height: 0px;">
-          <li><a href="#" aria-expanded="false">item 1.1</a></li>
-          <li><a href="#" aria-expanded="false">item 1.2</a></li>
-          <li class="">
-            <a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
-            <ul class="mm-collapse" style="height: 0px;">
-              <li><a href="#">item 1.3.1</a></li>
-              <li><a href="#">item 1.3.2</a></li>
-              <li><a href="#">item 1.3.3</a></li>
-              <li><a href="#">item 1.3.4</a></li>
-            </ul>
-          </li>
-          <li><a href="#" aria-expanded="false">item 1.4</a></li>
-          <li class="">
-           <a class="has-arrow" href="#" aria-expanded="false">Menu 1.5</a>
-           <ul class="mm-collapse" style="height: 0px;">
-             <li><a href="#">item 1.5.1</a></li>
-             <li><a href="#">item 1.5.2</a></li>
-             <li><a href="#">item 1.5.3</a></li>
-             <li><a href="#">item 1.5.4</a></li>
-           </ul>
-         </li>
-       </ul>
+     </ul>
      </li>
      <li class="">
        <a class="has-arrow" href="#" aria-expanded="false">Menu 2</a>
@@ -64,8 +63,34 @@
          <li><a href="#">item 2.3</a></li>
          <li><a href="#">item 2.4</a></li>
        </ul>
-     </li>
-       </ul>
-    </nav>
+    </li>
+    <li class="">
+      <a class="btn" href="">Членство в УСПП</a>
 
-    <div class="site-overlay"></div>
+      <section class="socials">
+        <div class="socials__item">
+          <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Facebook">
+            <svg width="30" height="30">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#facebook-icon"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="socials__item">
+          <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Youtube">
+            <svg width="41" height="30">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#youtube-icon"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="socials__item">
+          <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="ISO">
+            <img src="img/iso-icon.png" alt="ISO" width="30" height="30">
+          </a>
+        </div>
+      </section>
+
+    </li>
+  </ul>
+</nav>
+
+<div class="site-overlay"></div>

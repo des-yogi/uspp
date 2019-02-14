@@ -82,5 +82,17 @@
     @media (min-width: $screen-xl) {
       margin-top: auto;
     }
+
+    &--block {
+      margin-top: 40px !important;
+
+      a + a {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  #{$block-name}__btn-wrapper + #{$block-name}__btn-wrapper {
+    margin-top: 30px;
   }
 }

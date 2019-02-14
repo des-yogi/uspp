@@ -47,7 +47,9 @@
     "photo-gallery": [],
     "video-gallery": [],
     "large-table": [],
-    "footable": []
+    "footable": [],
+    "business-consulting": [],
+    "business-page": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

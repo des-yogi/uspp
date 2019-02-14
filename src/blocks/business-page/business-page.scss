@@ -1,0 +1,101 @@
+.business-page {
+
+  $block-name:                &; // #{$block-name}__element
+
+  .tabs__link-wrap {
+
+    &:first-child {
+
+      @media (min-width: $screen-md) {
+        margin-left: 5px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+
+      @media (min-width: $screen-md) {
+        margin-right: 5px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .tabs__content-link {
+    flex-direction: column;
+
+    @media (min-width: $screen-xl) {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  .tabs__content-img-wrapper {
+    display: none;
+
+    img {
+
+      @media (min-width: $screen-md) {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      display: block;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      margin-right: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex: 1.9 0;
+      //width: 285px;
+      height: 214px;
+    }
+  }
+
+  .tabs__content-block-text {
+    height: 100%;
+    padding: 10px;
+
+    @media (min-width: $screen-xl) {
+      flex: 3 0;
+      padding: 25px;
+    }
+  }
+
+  &__col-main {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 8);
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-aside {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+  }
+
+  &__events {
+
+    a + a {
+      margin-top: 20px;
+
+      @media (min-width: $screen-xl) {
+        margin-top: 25px;
+      }
+    }
+  }
+}

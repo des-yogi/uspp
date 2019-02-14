@@ -1,4 +1,132 @@
+.topbar-nav {
+  display: none;
+  // background: #212529;
+
+  @media (min-width: $screen-xl) {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__socials {
+
+    // margin-top: 10px;
+
+    & > a {
+      @media (min-width: $screen-xl) {
+        //flex: 1 1;
+        //max-width: 350px;
+        //width: 350px;
+      }
+
+      @media (min-width: $screen-xl) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+    }
+
+    .socials {
+
+      @media (min-width: $screen-xl) {
+        flex-wrap: nowrap;
+        max-width: 100%;
+      }
+    }
+
+    .socials__item {
+      @media (min-width: $screen-xl) {
+        flex-shrink: 0;
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+    }
+
+    .socials__link {
+      @media (min-width: $screen-xl) {
+        display: block;
+        flex: 0 0;
+
+        img {
+          display: block;
+        }
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      //flex-shrink: 0 !important;
+      flex-grow: 1 !important;
+      max-width: 330px !important;
+      margin-top: 0;
+      margin-left: auto;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+}
+
+.topbar-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    //background: #212529;
+}
+.topbar-nav .metismenu {
+    display: flex;
+    flex-direction: column;
+}
+.topbar-nav .metismenu > li {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.topbar-nav .metismenu a {
+    position: relative;
+    display: block;
+    padding: 5px 15px;
+    color: #adb5bd;
+    outline-width: 0;
+    transition: all .3s ease-out;
+}
+
+.topbar-nav .metismenu a:hover,
+.topbar-nav .metismenu a:focus,
+.topbar-nav .metismenu a:active {
+    color: #f8f9fa;
+    text-decoration: none;
+    background: #0b7285;
+}
+
+@media (min-width: $screen-xl) {
+    .topbar-nav .metismenu {
+                flex-direction: row;
+    }
+    .topbar-nav .metismenu > li {
+                flex-direction: column;
+    }
+    .topbar-nav .metismenu > li > ul {
+        position: absolute;
+        top: 100%;
+        min-width: 100%;
+        z-index: 1001;
+    }
+    .topbar-nav.is-hoverable .metismenu > li > ul {
+      height: auto !important;
+    }
+    .topbar-nav.is-hoverable .metismenu > li:hover > ul {
+        display: block;
+    }
+    .topbar-nav.is-hoverable .metismenu > li:hover > a.has-arrow:after {
+        transform: rotate(-135deg);
+    }
+}
+
 .main-nav {
+  /* display: none;
   position: relative;
   z-index: 10;
   font-family: $font-family--headings;
@@ -11,11 +139,11 @@
 
   @media (min-width: $screen-xl) {
     display: block;
-  }
+  } */
 
   $block-name:                &; // #{$block-name}__element
 
-  .submenu-button {
+  /* .submenu-button {
     position: absolute;
     z-index: 10;
     right: 0;
@@ -217,100 +345,5 @@
       }
     }
 
-  }
+  } */
 }
-
-.site-overlay {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  visibility: hidden;
-  opacity: 0;
-  cursor: pointer;
-  transition: visibility 0s ease, opacity .2s ease;
-}
-
-.offside-js--is-open .site-overlay {
-  visibility: visible;
-  opacity: .7;
-  transition-delay: delay 0s;
-}
-
-// -------------------------------------
-
-.sidebar-nav {
-    background: #fff;
-}
-.sidebar-nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    background: #fff;
-}
-
-.sidebar-nav .metismenu {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-nav .metismenu li + li {
-  margin-top: 5px;
-}
-
-.sidebar-nav .metismenu li:first-child {
-  margin-top: 5px;
-}
-.sidebar-nav .metismenu li:last-child {
-  margin-bottom: 5px;
-}
-
-
-.sidebar-nav .metismenu > li {
-    /* flex: 1 1 0%;*/
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-.sidebar-nav .metismenu a {
-    position: relative;
-    display: block;
-    padding: 13px 15px;
-    color: #adb5bd;
-    outline-width: 0;
-    transition: all .3s ease-out;
-}
-
-.sidebar-nav .metismenu ul a {
-    padding: 10px 15px 10px 30px;
-}
-
-.sidebar-nav .metismenu ul ul a {
-    padding: 10px 15px 10px 45px;
-}
-
-.sidebar-nav .metismenu a:hover,
-.sidebar-nav .metismenu a:focus,
-.sidebar-nav .metismenu a:active {
-    color: $white;
-    text-decoration: none;
-    background: $main-color;
-}
-
-.sidebar-nav .has-arrow {
-
-  &::after {
-    transform: rotate(-135deg) translate(0, -50%);
-  }
-
-  &[aria-expanded="true"] {
-    &::after {
-      transform: rotate(45deg) translate(0, -50%);
-    }
-  }
-}
-

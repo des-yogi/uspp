@@ -7,19 +7,20 @@
 */
 
 /* Off-canvas element CSS */
-$offset-width: 260px;
+
+$offset-width: 320px;
 
 .offside {
   padding: 10px;
 
-    position: fixed; /* Does not play well with some old browsers (see: README) */
-    width: $offset-width;
-    height: 100%;
-    top: 0;
-    z-index: 9999;
-    overflow: auto;
-    background-color: $white;
-    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+  position: fixed; /* Does not play well with some old browsers (see: README) */
+  width: $offset-width;
+  height: 100%;
+  top: 0;
+  z-index: 9999;
+  overflow: auto;
+  background-color: $white;
+  -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 }
 
 /* Left off-canvas elements default status: out of the page */

@@ -38,8 +38,7 @@
     z-index: 0;
 
     @media (min-width: $screen-xl) {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      background-color: $body-bg;
       box-shadow: $shadow-menu;
     }
   }

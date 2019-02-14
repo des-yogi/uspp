@@ -1,14 +1,52 @@
 <!--DEV
 
-Для использования этого файла как шаблона:
-
 @ @include('blocks/footable/footable.html')
 
 (Нужно убрать пробел между символами @)
 Подробнее: https://www.npmjs.com/package/gulp-file-include
 
+<table class="table  table-hover">
+  <thead>
+    <tr class="large-table__headings">
+      <th data-breakpoints="xs sm md">№</th>
+      <th >Назва компанії</th>
+      <th data-breakpoints="xs sm">Поштова адреса</th>
+      <th data-breakpoints="xs sm md">Сфера діяльності</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="large-table__name">ТОВ «КОНКОРД ІНДАСТРІАЛ КЕМІКАЛС»</td>
+      <td>49040 м.Дніпропетровськ, вул.Космічна, 49 Б</td>
+      <td>Технології розробки, проектування, виготовлення та</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="large-table__name">Дніпропетровська торгово-промислова палата</td>
+      <td>вул. Шевченка, 4, м. Дніпропетровськ, 49044 Україна</td>
+      <td>Широкий спектр послуг ДТПП націлений на підвищення конкурентоспроможності регіональних виробників</td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
 
+инициализация посредствлм JS:
 
-<div class="footable">content</div>
+$( document ).ready(function() {
+  $('.table').footable({
+    'expandFirst': true,
+    'showHeader': true,
+    'breakpoints': {
+      "xs": 320, // extra small
+      "sm": 480, // small
+      "md": 768, // medium
+      "lg": 992, // large
+      "xl": 1280 // x-large
+    }
+  });
+});
+
+NB: В этой версии есть глюк с объектом Дата... Я его выпилил
 
 -->

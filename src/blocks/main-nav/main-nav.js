@@ -123,7 +123,7 @@
 
 
 (function () {
-  var myOffside = offside( '#my-menu', {
+  var myOffside = offside( '#off-canvas-menu', {
 
       // Global offside options: affect all offside instances
       slidingElementsSelector: '#content-container', // String: Sliding elements selectors ('#foo, #bar')
@@ -131,7 +131,7 @@
       debug: true,                                      // Boolean: If true, print errors in console
 
       // Offside instance options: affect only this offside instance
-      buttonsSelector: '#my-button, .menu-toggle',   // String: Offside toggle buttons selectors ('#foo, #bar')
+      buttonsSelector: '#off-canvas-close, .menu-toggle',   // String: Offside toggle buttons selectors ('#foo, #bar')
       slidingSide: 'left',                             // String: Offside element pushed on left or right
       init: function(){},                               // Function: After init callback
       beforeOpen: function(){},                         // Function: Before open callback
@@ -139,7 +139,7 @@
       beforeClose: function(){},                        // Function: Before close callback
       afterClose: function(){
         $('.offside-sliding-element').css({'transform':'translate3d(0, 0, 0)', 'transition':'none'});
-      },                         // Function: After close callback
+      },  // Function: After close callback
 
   });
 
@@ -148,7 +148,6 @@
 })();
 
 $(function () {
-
-    $('#mobile-nav').metisMenu();
-
+  $('#mobile-nav').metisMenu();
+  $('#desktop-nav').metisMenu();
 });
