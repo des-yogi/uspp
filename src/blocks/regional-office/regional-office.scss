@@ -1,0 +1,60 @@
+.regional-office {
+
+  $block-name:                &; // #{$block-name}__element
+
+  .col {
+    @include col(xs, 12);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  .last-news-block__col-title {
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  &__city {
+    display: block;
+    margin-bottom: 15px;
+    margin-right: 30px;
+    color: $main-color;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    @media (min-width: $screen-md) {
+      margin-left: auto;
+    }
+  }
+
+  &__link-wrapper {
+    text-align: right;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: larger;
+    text-decoration: none;
+    text-align: right;
+    color: $main-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    color: $title-color !important;
+
+    @media (min-width: $screen-md) {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+}

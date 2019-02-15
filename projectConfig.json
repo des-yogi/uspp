@@ -33,7 +33,23 @@
     "contacts": [],
     "socials": [],
     "search": [],
-    "copyrights": []
+    "copyrights": [],
+    "offside": [],
+    "off-canvas": [],
+    "page-404": [],
+    "partnership": [],
+    "accordion": [],
+    "content-page": [],
+    "regional-office": [],
+    "contacts-page": [],
+    "leaders": [],
+    "herald-uspp": [],
+    "photo-gallery": [],
+    "video-gallery": [],
+    "large-table": [],
+    "footable": [],
+    "business-consulting": [],
+    "business-page": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
@@ -41,7 +57,9 @@
     "./src/scss/functions.scss",
     "../../node_modules/swiper/dist/css/swiper.css",
     "../../node_modules/accordion-js/dist/accordion.css",
-    "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css"
+    "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css",
+    "../../node_modules/offside-js/dist/offside.css",
+    "../../node_modules/metismenu/dist/metisMenu.css"
   ],
   "addCssAfter": [],
   "singleCompiled": [
@@ -56,7 +74,9 @@
     "./node_modules/swiper/dist/js/swiper.js",
     "./node_modules/blazy/blazy.js",
     "./node_modules/object-fit-images/dist/ofi.js",
-    "./node_modules/accordion-js/dist/accordion.js"
+    "./node_modules/accordion-js/dist/accordion.js",
+    "./node_modules/offside-js/dist/offside.js",
+    "./node_modules/metismenu/dist/metisMenu.js"
   ],
   "addJsAfter": [
     "./src/js/global-script.js"

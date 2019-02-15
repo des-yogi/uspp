@@ -1,0 +1,45 @@
+.contacts-page {
+
+  $block-name:                &; // #{$block-name}__element
+
+  .ac-q.accordion__title {
+    text-transform: none;
+  }
+
+  .col {
+    @include col(xs, 12);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  .last-news-block__col-title {
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  &__inner-row {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 6);
+
+    span {
+      display: block;
+    }
+
+    p:last-child {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  &__address-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    font-weight: 500;
+    font-size: inherit;
+    color: $title-color;
+  }
+}

@@ -1,0 +1,63 @@
+.page-404 {
+  padding-top: 30px;
+
+  @media (min-width: $screen-md) {
+    padding-top: 60px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+    text-align: center;
+
+    &:first-child {
+      @include col-offset(xl, 2);
+      margin-bottom: 50px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      @media (min-width: $screen-md) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-left: 50px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      text-align: left;
+    }
+  }
+
+  &__numb {
+    display: block;
+    @include text-hide;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-transform: none;
+    text-align: inherit;
+  }
+
+  &__link {
+    width: 100%;
+    max-width: 305px;
+  }
+}

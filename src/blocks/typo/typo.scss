@@ -65,7 +65,7 @@ h6 {
   font-family: $font-family--headings;
   font-weight: 700;
   line-height: $line-height;
-  color: $text-color;
+  color: $title-color;
   text-align: center;
 }
 
@@ -243,9 +243,15 @@ abbr[title] {
 }
 
 blockquote {
-  padding: 0;
+  padding: 20px;
   margin-left: 0;
   margin-right: 0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: larger;
+  line-height: $line-height;
+  color: $title-color;
+  border-left: 4px solid $main-color;
 }
 
 a {
@@ -271,4 +277,38 @@ a, b, i, strong, em, small, code {
 
 q {
   quotes:  "«" "»";
+}
+
+.table-simple {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  margin: $line-height 0;
+
+  caption {
+    padding: 1em 0;
+    caption-side: top;
+    font-size: smaller;
+    line-height: 1em;
+    text-align: left;
+    color: $text-color;
+  }
+
+  tr {
+
+    &:nth-child(n+1) {
+      border-bottom: 1px solid $text-muted;
+    }
+  }
+
+  td,
+  th {
+    padding: 10px 7px;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    border-bottom: 2px solid $main-color;
+  }
 }

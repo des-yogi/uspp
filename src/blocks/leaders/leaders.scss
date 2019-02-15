@@ -1,0 +1,146 @@
+.leaders {
+
+  $block-name:                &; // #{$block-name}__element
+
+  h2 {
+    text-align: left;
+  }
+
+  &__main {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: $white;
+
+    .col-img {
+      @include col(xs, 12);
+      @include col(md, 4);
+      @include col(xl, 3);
+    }
+
+    .col-text {
+      @include col(xs, 12);
+      @include col(md, 8);
+      @include col(xl, 9);
+      box-shadow: $shadow;
+
+      @media (min-width: $screen-md) {
+        box-shadow: none;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      box-shadow: $shadow;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__main-img {
+    display: block;
+    margin-left: -10px;
+    margin-right: -10px;
+    overflow: hidden;
+
+    @media (min-width: $screen-sm) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      @include img-width-flex;
+      // max-width: 480px;
+      // margin-left: auto;
+      // margin-right: auto;
+    }
+  }
+
+  &__main-text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    h2 {
+      @media (min-width: $screen-xl) {
+        margin-bottom: 30px;
+      }
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    @media (min-width: $screen-md) {
+      height: 100%;
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  &__main-link {
+    align-self: flex-end;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: $main-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: auto;
+    }
+  }
+
+  &__other {
+
+  }
+
+  &__other-col {
+    @include col(xs, 12);
+    @include col(sm, 6);
+    @include col(md, 4);
+    @include col(lg, 3);
+    margin-bottom: 25px;
+  }
+
+  &__other-link {
+    display: block;
+    text-decoration: none;
+    color: $title-color;
+
+    .h5 {
+      color: currentColor;
+    }
+  }
+
+  &__other-img {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      @include img-width-flex;
+    }
+  }
+
+  &__other-text {
+    //margin-top: 10px;
+  }
+}

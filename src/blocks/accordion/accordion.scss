@@ -1,0 +1,123 @@
+.accordion {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-md) {
+    //margin-top: 40px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  .ac {
+    margin-top: 20px;
+    border: none;
+
+    .ac-a {
+      font-family: inherit;
+      color: $text-color;
+
+      p {
+        margin: inherit;
+        padding: 5px 15px;
+        font-family: inherit;
+        font-size: inherit;
+
+        &:last-child {
+          padding-bottom: 20px;
+        }
+
+        @media (min-width: $screen-md) {
+          padding-left: 20px;
+        }
+
+        @media (min-width: $screen-xl) {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+    }
+
+    .ac-q {
+      padding: 13px 50px 13px 15px;
+      font-family: $font-family--headings;
+      text-transform: uppercase;
+      color: $title-color;
+      user-select: none;
+
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        display: block;
+        width: 50px;
+        height: 100%;
+        background-color: $white;
+        background-image: svg-load('../img/arrow-down.svg', fill=$text-color);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &:hover,
+      &:focus {
+        color: $main-color;
+
+        &::before {
+          background-image: svg-load('../img/arrow-down.svg', fill=$main-color);
+        }
+      }
+
+      @media (min-width: $screen-md) {
+        padding-left: 20px;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding: 20px 50px 20px 25px;
+      }
+    }
+
+    &.active {
+      color: main-color;
+
+      .ac-q::before {
+        //background-color: $second-color;
+        background-image: svg-load('../img/arrow-up.svg', fill=$main-color);
+        transform: scale(-1, 1);
+      }
+    }
+  }
+
+  &__container {
+    list-style: none;
+    padding-left: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    text-align: left !important;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px !important;
+    font-weight: 500;
+    text-align: left;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__acc-item {
+    box-shadow: $shadow;
+  }
+}

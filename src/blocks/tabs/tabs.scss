@@ -30,7 +30,8 @@
   &__link-wrap {
     flex: 1 1;
     position: relative;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
     margin-bottom: 10px;
 
     &--active {
@@ -61,15 +62,22 @@
       }
     }
 
+    &:first-child {
+
+      @media (min-width: $screen-md) {
+        margin-left: 0;
+      }
+    }
+
     &:last-child {
 
-      @media (min-width: $screen-xl) {
+      @media (min-width: $screen-md) {
         margin-right: 0;
       }
     }
 
     @media (min-width: $screen-xl) {
-      margin-right: 0;
+      margin: 0;
     }
   }
 
@@ -196,6 +204,7 @@
     flex: 1 1;
     display: flex;
     flex-direction: column;
+    //height: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;

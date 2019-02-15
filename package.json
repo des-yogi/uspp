@@ -76,10 +76,13 @@
     "blazy": "^1.8.2",
     "ismobilejs": "^0.5.1",
     "jquery": "^3.3.1",
+    "metismenu": "^3.0.3",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
+    "offside-js": "^1.4.0",
     "picturefill": "^3.0.3",
     "svg4everybody": "^2.1.9",
-    "swiper": "^4.4.6"
+    "swiper": "^4.4.6",
+    "tablesaw": "^3.1.0"
   }
 }

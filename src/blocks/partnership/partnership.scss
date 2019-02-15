@@ -1,0 +1,44 @@
+.partnership {
+
+  $block-name:                &; // #{$block-name}__element
+
+  .col {
+    @include col(xs, 12);
+  }
+
+  &__text {
+    margin-bottom: 50px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__subtitle {
+    text-align: left;
+    color: $main-color;
+  }
+
+  &__accordion {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  &__item {
+
+  }
+
+  &__contacts {
+
+    span,
+    a {
+      display: block;
+    }
+  }
+
+  &__contacts-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+  }
+}

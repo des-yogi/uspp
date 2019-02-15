@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>USPP Home page</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    @@include('blocks/off-canvas/off-canvas.html')
+
+    <div id="content-container" class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main" role="main">
+
+        <article class="container  leaders">
+
+          <div class="row">
+            <div class="last-news-block__col-title">
+              <h1 class="h1  h1--decor"><span>Лідери УСПП</span></h1>
+            </div>
+          </div>
+
+          <section class="leaders__main">
+            <div class="row">
+
+              <div class="col-img">
+                <a href="#" class="leaders__main-img" title="Президент УСПП">
+                  <picture>
+                    <source srcset="img/leader-1.jpg" media="(min-width: 600px)">
+                    <source srcset="img/leader-1.jpg" media="(min-width: 480px)">
+                    <img src="img/leader-1.jpg" alt="Президент УСПП" width="320" height="337">
+                    <!-- начальный размер - 480px -->
+                  </picture>
+                </a>
+              </div>
+
+              <div class="col-text">
+                <div class="leaders__main-text">
+                  <h2>Президент УСПП</h2>
+                  <p>Анатолій Кирилович Кінах народився 4 серпня 1954 року у стародавньому українському селі Братушани, заснованому кілька століть тому козаками Богдана Хмельницького. Вищу освіту Анатолій Кирилович здобував у Ленінградському кораблебудівному інституті, який закінчив 1978 року.</p>
+                  <a class="leaders__main-link" href="">Подробнее</a>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="leaders__other">
+            <h2>Лiдери УСПП</h2>
+
+            <div class="row">
+
+              <article class="leaders__other-col">
+                <a class="leaders__other-link" href="" title="Прохоров Сергій Мефодійович">
+                  <div class="leaders__other-img">
+                    <img src="img/leader-other.jpg" alt="Прохоров Сергій Мефодійович" width="300" height="225">
+                    <!-- достаточный размер - 405х304 px -->
+                  </div>
+                  <h5 class="h5  leaders__other-text">
+                    Прохоров Сергій Мефодійович
+                  </h5>
+                </a>
+              </article>
+
+              <article class="leaders__other-col">
+                <a class="leaders__other-link" href="" title="Прохоров Сергій Мефодійович">
+                  <div class="leaders__other-img">
+                    <img src="img/leader-other.jpg" alt="Прохоров Сергій Мефодійович" width="300" height="225">
+                  </div>
+                  <h5 class="h5  leaders__other-text">
+                    Прохоров Сергій Мефодійович
+                  </h5>
+                </a>
+              </article>
+
+              <article class="leaders__other-col">
+                <a class="leaders__other-link" href="" title="Прохоров Сергій Мефодійович">
+                  <div class="leaders__other-img">
+                    <img src="img/leader-other.jpg" alt="Прохоров Сергій Мефодійович" width="300" height="225">
+                  </div>
+                  <h5 class="h5  leaders__other-text">
+                    Прохоров Сергій Мефодійович
+                  </h5>
+                </a>
+              </article>
+
+              <article class="leaders__other-col">
+                <a class="leaders__other-link" href="" title="Прохоров Сергій Мефодійович">
+                  <div class="leaders__other-img">
+                    <img src="img/leader-other.jpg" alt="Прохоров Сергій Мефодійович" width="300" height="225">
+                  </div>
+                  <h5 class="h5  leaders__other-text">
+                    Прохоров Сергій Мефодійович
+                  </h5>
+                </a>
+              </article>
+
+            </div>
+          </section>
+
+        </article>
+
+      </main>
+
+    </div>
+
+    <div class="container">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+  <script>
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>USPP Home page</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+
+    @@include('blocks/off-canvas/off-canvas.html')
+
+    <div id="content-container" class="page__content">
+
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main" role="main">
+
+        <article class="container  page-404">
+          <div class="row">
+
+            <div class="page-404__col">
+              <span class="page-404__numb">Error 404
+                <img src="img/404.svg" alt="Ошибка 404" width="254" height="110">
+              </span>
+            </div>
+
+            <div class="page-404__col">
+              <h1 class="page-404__title">Страница не найдена или не существует</h1>
+              <a class="btn  page-404__link" href="/">Вернуться на главную</a>
+            </div>
+
+          </div>
+        </article>
+
+      </main>
+
+    </div>
+
+    <div class="container">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+  <script>
+
+  </script>
+</body>
+</html>
