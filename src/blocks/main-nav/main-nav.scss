@@ -3,9 +3,30 @@
   // background: #212529;
 
   @media (min-width: $screen-xl) {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .socials {
+    flex-wrap: nowrap;
+    min-width: 305px;
+    justify-content: flex-end;
+    align-items: center;
+
+    .btn {
+      padding: 10px 25px;
+    }
+
+    .socials__item {
+
+      img {
+        min-width: 30px;
+        height: 30px;
+      }
+    }
   }
 }
 
@@ -36,6 +57,7 @@
     flex: 1 1 0%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
 
     & > a {
@@ -46,7 +68,7 @@
 .topbar-nav .metismenu a {
     position: relative;
     display: block;
-    padding: 8px 15px;
+    padding: 8px 30px 8px 15px;
     font-family: $font-family--headings;
     font-size: 15px;
     font-weight: 500;
@@ -98,33 +120,13 @@
       //text-align: center;
     }
 
-    &:last-child {
+    /* &:last-child {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-left: 1px !important;
       margin-left: auto;
-
-      .socials {
-        flex-wrap: nowrap;
-        min-width: 305px;
-        justify-content: flex-end;
-        align-items: center;
-
-        .btn {
-          padding: 10px 25px;
-        }
-
-        .socials__item {
-          //margin-right: 15px;
-
-          img {
-            min-width: 30px;
-            height: 30px;
-          }
-        }
-      }
-    }
+    } */
   }
   .topbar-nav .metismenu > li > ul {
     position: absolute;
