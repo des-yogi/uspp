@@ -74,13 +74,15 @@
   }
 
   &__btn-wrapper {
+    width: 100%;
+
 
     a {
       width: 100%;
     }
 
     @media (min-width: $screen-xl) {
-      margin-top: auto;
+      margin-top: 10px;
     }
 
     &--block {
