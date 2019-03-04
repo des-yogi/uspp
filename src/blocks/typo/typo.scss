@@ -82,15 +82,27 @@ h2 {
     color: $white;
     border-bottom: 2px solid $main-color;
 
+    a,
     span {
       display:inline-block;
       vertical-align: bottom;
       padding: 9px 10px 5px;
+      text-decoration: none;
       background-color: $main-color;
 
       @media (min-width: $screen-md) {
         padding-left: 20px;
         padding-right: 20px;
+      }
+    }
+
+    a {
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $white;
       }
     }
   }
@@ -185,6 +197,7 @@ figure {
   margin-bottom: ($line-height / 2);
   font-size: 1em;
   color: currentColor;
+  overflow-wrap: break-word;
   hyphens: auto;
 }
 
@@ -260,6 +273,7 @@ a {
   font-weight: inherit;
   line-height: inherit;
   text-decoration: underline;
+  overflow-wrap: break-word;
   color: inherit;
   text-decoration-skip-ink: auto;
   transition: all 0.3s ease-out;

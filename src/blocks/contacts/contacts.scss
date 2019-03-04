@@ -11,7 +11,7 @@
     margin: 0;
     margin-right: 20px;
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-lg) {
       flex-direction: row;
     }
   }
@@ -23,12 +23,12 @@
     &:last-child {
       margin-bottom: 0;
 
-      @media (min-width: $screen-md) {
+      @media (min-width: $screen-lg) {
         margin-right: 0;
       }
     }
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-lg) {
       margin-right: 20px;
       margin-bottom: 0;
     }
@@ -53,6 +53,22 @@
     &:last-child {
       @media (min-width: $screen-xl) {
         margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-left: 30px;
+      margin-top: 10px;
+
+      @media (min-width: 425px) {
+        margin-top: 0;
+        margin-left: 0;
       }
     }
   }

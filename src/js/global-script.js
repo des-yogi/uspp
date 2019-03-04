@@ -121,3 +121,21 @@ $( document ).ready(function() {
     }
   });
 });
+
+(function(){
+  const form = document.querySelector('#form-feedback');
+  const agreementControl = form.querySelector('#agreement');
+  const submitBtn = form.querySelector('.form__submit');
+
+  const agreementControlHandler = function (e) {
+    if (this.checked) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  };
+
+  if (form) {
+    agreementControl.addEventListener('change', agreementControlHandler);
+  }
+}());
