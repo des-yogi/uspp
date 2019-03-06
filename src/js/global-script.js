@@ -123,19 +123,19 @@ $( document ).ready(function() {
 });
 
 (function(){
-  const form = document.querySelector('#form-feedback');
-  const agreementControl = form.querySelector('#agreement');
-  const submitBtn = form.querySelector('.form__submit');
-
-  const agreementControlHandler = function (e) {
-    if (this.checked) {
-      submitBtn.disabled = false;
-    } else {
-      submitBtn.disabled = true;
-    }
-  };
-
+  const form = document.getElementById('#form-feedback');
   if (form) {
+    const agreementControl = form.getElementById('#agreement');
+    const submitBtn = form.querySelector('.form__submit');
+
+    const agreementControlHandler = function (e) {
+      if (this.checked) {
+        submitBtn.disabled = false;
+      } else {
+        submitBtn.disabled = true;
+      }
+    };
+
     agreementControl.addEventListener('change', agreementControlHandler);
   }
 }());

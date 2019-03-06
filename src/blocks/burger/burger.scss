@@ -1,22 +1,3 @@
-.menu-toggle {
-  position: relative;
-  flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  margin-left: 20px;
-  margin-right: 0;
-  border: none;
-  cursor: pointer;
-  box-shadow: $shadow-menu;
-
-  @media (min-width: $screen-md) {
-    margin-right: 0;
-    margin-left: 25px;
-  }
-  @media (min-width: $menu-desktop-width) {
-    display: none;
-  }
-}
 .hamburger, .cross {
   position: absolute;
   top: 50%;

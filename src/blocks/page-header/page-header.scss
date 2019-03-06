@@ -6,16 +6,81 @@
   &__top {
     position: relative;
     z-index: 10;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: $shadow-menu;
 
     @media (min-width: $screen-xl) {
       box-shadow: none;
+    }
+  }
+
+  /* .row {
+    width: 100%;
+  } */
+
+  .col-logo {
+    @include col(xs, 10);
+    @include col(xl, 7);
+    display: flex;
+  }
+
+  .col-burger {
+    @include col(xs, 2);
+    display: flex;
+    //margin-left: 20px;
+
+    @media (min-width: $menu-desktop-width) {
+      display: none;
+    }
+  }
+
+  .menu-toggle {
+    position: relative;
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+    box-shadow: $shadow-menu;
+  }
+
+  &__slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1;
+    margin-left: 15px;
+    font-family: $font-family--headings;
+  }
+
+  &__slogan-main {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-weight: 700;
+    //font-size: 11px;
+    font-size: calc(0.75rem + ((1vw - 3.2px) * 1.756));
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    color: $main-color;
+
+    @media (min-width: $screen-lg) {
+      font-size: 23.8px;
+    }
+  }
+
+  &__slogan-add {
+    //font-size: calc(0.6875rem + ((1vw - 3.2px) * 0.5208));
+    font-size: calc(0.75rem + ((1vw - 3.2px) * 0.4167));
+    font-weight: 500;
+    color: $text-color;
+    opacity: 0.9;
+
+    @media (min-width: $screen-xl) {
+      font-size: 16px;
     }
   }
 
