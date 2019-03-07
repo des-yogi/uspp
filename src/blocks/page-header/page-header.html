@@ -1,17 +1,87 @@
 <header class="page-header" role="banner">
 
+    <div class="container  page-header__super-top">
+      <div class="row">
+
+        <div class="col-super-top  col-super-top--desktop">
+          <div class="page-header__super-top-links">
+            <a href="#" title="">Фотогалерея</a>
+            <a href="#" title="">Відеогалерея</a>
+            <a href="#" title="">Вісник УСПП</a>
+          </div>
+        </div>
+
+        <div class="col-super-top  col-super-top--mobile">
+
+          <ul class="lang-switcher">
+            <li class="lang-switcher__item">
+              <a class="lang-switcher__link  active">UA</a>
+            </li>
+            <li class="lang-switcher__item">
+              <a class="lang-switcher__link" href="">RU</a>
+            </li>
+            <li class="lang-switcher__item">
+              <a class="lang-switcher__link" href="">EN</a>
+            </li>
+          </ul>
+
+          <ul class="socials">
+            <li class="socials__item">
+              <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Facebook">
+                <img src="img/facebook-icon.svg" alt="Facebook" width="32" height="32">
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Youtube">
+                <img src="img/youtube-icon.svg" alt="Youtube" width="32" height="32">
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="ISO">
+                <img src="img/iso-icon.svg" alt="ISO" width="32" height="32">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
     <div class="container  page-header__top">
 
       <div class="row">
 
         <div class="col-logo">
           <a href="/" class="logo  logo--header" title="УСПП logo">
-            <img src="img/uspp-logo.svg" alt="УСПП logo" width="245" height="60">
+            <img src="img/uspp-logo.svg" alt="УСПП logo" width="49" height="60">
           </a>
           <div class="page-header__slogan">
-            <h1 class="page-header__slogan-main">Український&nbsp;союз промисловців&nbsp;і&nbsp;підприємців</h1>
+            <span class="page-header__slogan-main">Український&nbsp;союз промисловців&nbsp;і&nbsp;підприємців</span>
             <span class="page-header__slogan-add">Ваш надійний партнер</span>
           </div>
+        </div>
+
+        <div class="col-helper">
+
+          <article class="search">
+            <h4 class="visually-hidden">Строка поиска по сайту</h4>
+            <form id="search-form" action="" method="get">
+              <div class="search__field-wrapper">
+                <input type="search" name="query" value="" placeholder="Поиск">
+                <button class="search__submit" type="submit" aria-label="Кнопка Искать по сайту">
+                  <svg width="24" height="24">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#search-icon"></use>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </article>
+
+          <div class="page-header__partners">
+            <a class="btn" href="#">Членство в УСПП</a>
+          </div>
+
         </div>
 
         <div class="col-burger">
@@ -157,7 +227,7 @@
 
         </ul>
 
-        <div class="topbar-nav__socials">
+        <!-- <div class="topbar-nav__socials">
           <section class="socials">
             <div class="socials__item">
               <a href="" class="socials__link" target="_blank" rel="nofollow noopener" title="Facebook">
@@ -180,7 +250,7 @@
             </div>
             <a class="btn" href="">Членство в УСПП</a>
           </section>
-        </div>
+        </div> -->
 
       </nav>
     </div>
