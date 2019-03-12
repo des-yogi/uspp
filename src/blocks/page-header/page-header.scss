@@ -144,8 +144,12 @@
     flex-direction: column;
     justify-content: center;
     flex: 1 1;
-    margin-left: 15px;
+    margin-left: 5px;
     font-family: $font-family--headings;
+
+    @media (min-width: $screen-sm) {
+      margin-left: 15px;
+    }
   }
 
   &__slogan-main {
@@ -153,14 +157,14 @@
     margin-bottom: 3px;
     font-weight: 700;
     //font-size: 12px;
-    font-size: calc(0.75rem + ((1vw - 3.2px) * 1.6369));
+    font-size: calc(0.6875rem + ((1vw - 3.2px) * 0.8333));
     line-height: 1.2;
     text-align: left;
     text-transform: uppercase;
     color: $main-color;
 
     @media (min-width: $screen-lg) {
-      font-size: 23px;
+      font-size: 19px;
     }
   }
 
