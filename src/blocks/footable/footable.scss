@@ -71,7 +71,7 @@
     }
 
     &:nth-child(3) {
-      width: 20%;
+      width: 30%;
     }
   }
 }
@@ -79,7 +79,7 @@
 .footable.table > thead > tr > td,
 .footable-details.table > thead > tr > th,
 .footable-details.table > thead > tr > td {
-  vertical-align: bottom;
+  vertical-align: top;
   border-bottom: 3px solid $main-color;
 }
 

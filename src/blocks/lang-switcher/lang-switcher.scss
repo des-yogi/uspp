@@ -1,99 +1,47 @@
 .lang-switcher {
-  position: relative;
   display: flex;
-  flex-direction: column;
+  width: 50%;
   margin: 0;
   padding-left: 0;
   list-style-type: none;
-  background-color: $white;
-  background-image: svg-load('../img/arrow-down.svg', fill=$text-muted);
-  background-position: right 8px top 15px;
-  background-repeat: no-repeat;
-  background-size: 20px 9px;
-  transition: $transition;
 
-  &:hover,
-  &:focus {
-    background-image: svg-load('../img/arrow-down.svg', fill=$main-color);
-
-    @media (min-width: $screen-xl) {
-      background: none;
-    }
-  }
-
-  &.rotate-bg {
-    background-image: svg-load('../img/arrow-up.svg', fill=$main-color);
-
-    @media (min-width: $screen-xl) {
-      background: none;
-    }
-  }
-
-  @media (min-width: $screen-xl) {
-    flex-direction: row;
-    background: none;
+  @media (min-width: $screen-lg) {
+    width: auto;
   }
 
   $block-name:                &; // #{$block-name}__element
 
   &__item {
-    // margin-right: 25px;
-    opacity: 0;
-    height: 0;
-    padding: 0 10px;
-    cursor: pointer;
-    transition: $transition;
-    order: 0;
+    margin-right: 5px;
 
     &:first-child {
-      margin-top: 0;
-    }
+      #{$block-name}__link {
+        padding-left: 0;
 
-    &.active,
-    &.open {
-      height: 39px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      opacity: 1;
-
-      & #{$block-name}__link {
-        font-size: 18px;
-        line-height: inherit;
+        @media (min-width: $screen-lg) {
+          padding-left: 10px;
+        }
       }
-    }
-
-    &.active {
-      order: -1;
-    }
-
-    @media (min-width: $screen-xl) {
-      opacity: 1;
-      padding: 10px;
-      height: 39px;
     }
   }
 
   &__link {
     display: block;
-    font-size: 0;
-    line-height: 0;
+    padding: 9px 10px 7px;
+    font-size: 16px;
     font-family: $font-family--headings;
     font-weight: 500;
+    line-height: 1;
     text-transform: uppercase;
     text-decoration: none;
-    color: currentColor;
+    color: $white;
+    opacity: 0.5;
 
+    &:hover,
+    &:focus,
     &.active {
-      color: $main-color;
-
-      @media (min-width: $screen-xl) {
-        font-weight: 700;
-      }
-    }
-
-    @media (min-width: $screen-xl) {
-      font-size: 18px;
-      line-height: inherit;
+      color: $white;
+      opacity: 1;
     }
   }
 }

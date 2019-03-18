@@ -1,37 +1,106 @@
-// В этом файле должны быть стили для БЭМ-блока form, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-// $font-family:       'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
-
-$font-size--h3:               1.5em !default;
-
-$line-height:                 1.375em !default;
+$font-family: 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 
 .form {
 
   $block-name:                &; // #{$block-name}__element
 
-  &__fieldset {
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
+  &__ctrl-wrapper {
 
-    &:not(:last-child) {
-      margin-bottom: $line-height;
+    input,
+    textarea {
+      width: 100%;
+      max-height: 42px;
+      padding: 10px 10px;
+      font-size: 16px;
+      border: 1px solid $text-muted;
+      border-radius: $border-radius;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border-color: $main-color;
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    &--btn {
+      margin-bottom: 30px;
+    }
+
+    &--agreement {
+
+      input[type=checkbox] {
+        display: none;
+      }
+
+      input[type=checkbox]:checked + label {
+        color: $main-color;
+
+        &::before {
+          border-color: currentColor;
+        }
+
+        &::after {
+          top: 4px;
+          left: 6px;
+          width: 14px;
+          height: 14px;
+          background-color: currentColor;
+        }
+      }
+
+      label {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 40px;
+        max-width: 100%;
+        font-size: 14px;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+          position: absolute;
+          display: block;
+          content: "";
+        }
+
+        &::before {
+          top: -2px;
+          left: 0;
+          width: 26px;
+          height: 26px;
+          border: 3px solid $text-muted;
+        }
+
+        &:hover,
+        &:focus {
+          color: $main-color;
+
+          &::before {
+            border-color: currentColor;
+          }
+        }
+      }
     }
   }
 
-  &__legend {
+  &__error {
     display: block;
+    min-height: 15px;
+    margin-bottom: 3px;
+    font-size: 0.75em;
+    color: $second-color;
+  }
+
+  &__submit {
     width: 100%;
-    margin-top: $line-height;
-    margin-bottom: ($line-height / 2);
-    font-size: $font-size;
-    font-family: $font-family;
-    font-weight: 700;
-    line-height: $line-height;
-    color: currentColor;
+
+    @media (min-width: $screen-xl) {
+      min-width: 185px;
+    }
   }
 }

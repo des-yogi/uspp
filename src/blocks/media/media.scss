@@ -85,6 +85,9 @@
   }
 
   &__photo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
     margin-bottom: 20px;
     box-shadow: $shadow;
@@ -97,6 +100,10 @@
     @media (min-width: $screen-xl) {
       padding-left: 15px;
       padding-right: 15px;
+    }
+
+    .publish-date {
+
     }
   }
 

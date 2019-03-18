@@ -24,6 +24,7 @@
     padding-right: 10px;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 0;
     text-align: left;
     color: $white;
     background-color: $main-color;
@@ -33,6 +34,17 @@
       margin-right: 0;
       padding-left: 20px;
       padding-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $white;
+      }
     }
   }
 

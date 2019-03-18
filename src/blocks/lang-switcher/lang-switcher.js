@@ -1,11 +1,11 @@
-(function () {
+/*(function () {
   const isMobile = window.isMobile.any;
   let screenWidth = document.documentElement.clientWidth;
 
   console.log(screenWidth);
 
   if (screenWidth < 1280) {
-    console.log('This - mobile width');
+    //console.log('This - mobile width');
 
     var langSwitcher = document.querySelector('.lang-switcher');
     if (langSwitcher) {
@@ -26,20 +26,10 @@
             this.classList.remove('rotate-bg');
         }
       }
-
-      for (var j = 0; j < langsArr.length; j++) {
-        if (langsArr[j].classList.contains('active')) {
-          langsArr[j].classList.remove('active');
-          langsArr[j].children[0].classList.remove('active');
-          langsArr[j].children[0].removeAttribute('href');
-        }
-        target.parentElement.classList.add('active');
-        target.classList.add('active');
-      }
     };
 
     if (currentLang) {
       langSwitcher.addEventListener('click', langSwitchOpener);
     }
   }
-})();
+})();*/

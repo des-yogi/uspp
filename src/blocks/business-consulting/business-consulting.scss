@@ -1,6 +1,44 @@
 .business-consulting {
 
-
   $block-name:                &; // #{$block-name}__element
 
+  .blockquote {
+    margin-bottom: 30px;
+  }
+
+  &__question {
+     margin-top: 0;
+   }
+
+   &__question-author {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__helper {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+
+    &--para {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__author-foto {
+    float: none;
+    width: 300px;
+    max-width: 350px;
+
+    @media (min-width: $screen-md) {
+      width: 350px;
+    }
+
+    @media (min-width: $screen-xl) {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 15px;
+    }
+  }
 }

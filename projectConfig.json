@@ -49,7 +49,9 @@
     "large-table": [],
     "footable": [],
     "business-consulting": [],
-    "business-page": []
+    "business-page": [],
+    "breadcrumbs": [],
+    "news-article": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

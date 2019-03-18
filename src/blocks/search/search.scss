@@ -1,31 +1,20 @@
 .search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   margin-left: auto;
 
   $block-name:                &; // #{$block-name}__element
 
   input[type=search] {
-    position: absolute;
-    z-index: 1;
-    left: 10px;
-    right: 10px;
-    top: 100%;
-    content: "";
-    width: calc(100% - 20px);
     height: 40px;
     padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.03);
     border: none;
     transition: $transition;
-    display: none;
-
-    &.open {
-      display: block;
-    }
 
     @media (min-width: $screen-lg) {
-      position: static;
       display: block;
-      width: 220px;
       border: 1px solid $white;
 
       &:hover,
@@ -37,10 +26,7 @@
   }
 
   &__field-wrapper {
-
-    @media (min-width: $screen-lg) {
-      display: flex;
-    }
+    display: flex;
   }
 
   &__submit {

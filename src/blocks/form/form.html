@@ -1,20 +1,46 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/form/form.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<form action="" class="form">
-  <fieldset>
-    <legend>Название формы</legend>
-    <label class="field-text">...</label>
-    <div class="field-actions">...</div>
-  </fieldset>
-</form>
-
 -->
+
+<form id="form-feedback" class="form" action="" method="post">
+
+  <div class="form__ctrl-wrapper">
+    <input id="af_name" type="text" name="name" value="" placeholder="ФИО">
+    <span class="form__error  error  error-name"></span>
+  </div>
+
+  <div class="form__ctrl-wrapper">
+    <input id="af_company" type="text" name="company" value="" placeholder="Компанія">
+    <span class="form__error  error error-company"></span>
+  </div>
+
+  <div class="form__ctrl-wrapper">
+    <input id="af_position" type="text" name="position" value="" placeholder="Посада">
+    <span class="form__error  error error-position"></span>
+  </div>
+
+  <div class="form__ctrl-wrapper">
+    <input id="af_tel" type="tel" name="tel" value="" placeholder="Телефон">
+    <span class="form__error  error error-tel"></span>
+  </div>
+
+  <div class="form__ctrl-wrapper">
+    <input id="af_email" type="email" name="email" value="" placeholder="Email">
+    <span class="form__error  error error-email"></span>
+  </div>
+
+  <div class="form__ctrl-wrapper">
+    <textarea id="af_message" name="message" value="" placeholder="Питання експерту"></textarea>
+    <span class="form__error  error error-message"></span>
+  </div>
+
+  <div class="form__ctrl-wrapper  form__ctrl-wrapper--btn">
+    <button class="btn  form__submit" type="submit">Відправити</button>
+  </div>
+
+  <div class="form__ctrl-wrapper  form__ctrl-wrapper--agreement">
+    <input id="agreement" type="checkbox" name="agreement" checked>
+    <label for="agreement">Даю згоду на обробку персональних даних</label>
+  </div>
+
+</form>
